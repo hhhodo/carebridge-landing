@@ -183,7 +183,7 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
    그려져 버려서 전체를 뒤덮는 문제가 있었음) */
 /* 카드 폭을 줄여 5장 + gap + padding 합이 1920px 안에 여유있게 들어오도록 (이전엔 2350px 가까이
    나와서 sticky 컨테이너의 overflow:hidden에 마지막 카드가 잘렸음) */
-.rc-tech__card{position:relative;flex-shrink:0;width:clamp(130px,12.5vw,240px);height:clamp(170px,16.4vw,315px);
+.rc-tech__card{position:relative;flex-shrink:0;width:clamp(160px,15.6vw,300px);height:clamp(210px,20.5vw,394px);
   --reveal:0;--stack-x:0px;--stack-rot:0deg;
   opacity:var(--reveal);
   transform:translateX(calc(var(--stack-x) * (1 - var(--reveal))))
@@ -207,9 +207,9 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
   display:flex;flex-direction:column;align-items:center;
   padding:clamp(16px,2vw,24px) clamp(12px,1.4vw,18px) clamp(20px,2.6vw,30px);}
 .rc-tech__card-badge{align-self:flex-start;border:1px solid rgba(7,20,56,.25);border-radius:var(--radius-circle);
-  padding:6px clamp(12px,1.4vw,16px);font-weight:var(--rc-fw-light);font-size:clamp(11px,1vw,14px);color:var(--rc-navy);}
-.rc-tech__card-icon{width:56%;max-width:90px;height:auto;object-fit:contain;margin:auto 0 clamp(12px,1.6vw,18px);}
-.rc-tech__card-caption{color:var(--rc-navy);font-weight:var(--rc-fw-light);font-size:clamp(11px,1vw,14px);
+  padding:8px clamp(14px,1.5vw,18px);font-weight:var(--rc-fw-light);font-size:clamp(13px,1.15vw,17px);color:var(--rc-navy);}
+.rc-tech__card-icon{width:56%;max-width:120px;height:auto;object-fit:contain;margin:auto 0 clamp(14px,1.8vw,20px);}
+.rc-tech__card-caption{color:var(--rc-navy);font-weight:var(--rc-fw-light);font-size:clamp(15px,1.3vw,19px);
   line-height:1.4;text-align:center;letter-spacing:-0.01em;}
 
 /* ---------- portfolio row (static — no carousel/arrows) ---------- */
