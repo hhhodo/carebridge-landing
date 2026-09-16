@@ -144,7 +144,7 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 
 /* ---------- showcase: 뱃지가 중력으로 떨어져 쌓이는 물리 인터랙션 (js/cloud-physics.js) ----------
    치트시트 .badge 토큰(--fs-badge, --space-*, --radius-circle) 기준으로 전 뱃지 동일 크기 통일 */
-.rc-showcase{background:var(--rc-navy);overflow:clip;}
+.rc-showcase{background:var(--rc-navy);overflow:clip;padding-bottom:clamp(60px,8vw,140px);}
 .rc-cloud{position:relative;width:100%;height:100vh;overflow:hidden;}
 .rc-cloud__tag{position:absolute;left:0;top:0;will-change:transform;opacity:0;transition:opacity .25s ease;
   display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;
@@ -169,12 +169,18 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 .rc-tech__bg::after{content:"";position:absolute;inset:0;background:var(--rc-navy);opacity:.35;}
 .rc-tech__head{position:relative;z-index:1;text-align:center;padding-block:clamp(60px,10vw,140px) clamp(40px,6vw,80px);}
 .rc-tech__head h2{color:var(--rc-white);font-weight:var(--fw-strong);
-  font-size:clamp(26px,4.2vw,var(--rc-fs-title));line-height:1.4;letter-spacing:-0.02em;max-width:20ch;margin-inline:auto;}
+  font-size:clamp(26px,4.2vw,var(--rc-fs-title));line-height:1.4;letter-spacing:-0.02em;max-width:38ch;margin-inline:auto;}
 .rc-tech__head h2 .accent{color:var(--rc-blue-light);}
 .rc-tech__row{position:relative;z-index:1;display:flex;gap:clamp(12px,1.6vw,32px);overflow-x:auto;
   padding:0 clamp(20px,8vw,160px) clamp(60px,10vw,140px);scrollbar-width:none;}
 .rc-tech__row::-webkit-scrollbar{display:none;}
-.rc-tech__row img{flex-shrink:0;width:clamp(140px,19.5vw,375px);height:clamp(184px,25.6vw,492px);object-fit:cover;border-radius:12px;}
+.rc-tech__row img{flex-shrink:0;width:clamp(140px,19.5vw,375px);height:clamp(184px,25.6vw,492px);object-fit:cover;border-radius:12px;
+  opacity:0;transform:translateY(56px);transition:opacity .6s ease,transform .6s ease;}
+.rc-tech__row img.is-visible{opacity:1;transform:translateY(0);}
+.rc-tech__row img:nth-child(1){transition-delay:0s;}
+.rc-tech__row img:nth-child(2){transition-delay:.14s;}
+.rc-tech__row img:nth-child(3){transition-delay:.28s;}
+.rc-tech__row img:nth-child(4){transition-delay:.42s;}
 
 /* ---------- portfolio row (static — no carousel/arrows) ---------- */
 .rc-portfolio{background:var(--rc-navy);padding-block:clamp(60px,10vw,120px);overflow:clip;}
