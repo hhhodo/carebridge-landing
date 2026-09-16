@@ -144,7 +144,7 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 /* ---------- showcase: 뱃지가 중력으로 떨어져 쌓이는 물리 인터랙션 (js/cloud-physics.js) ----------
    치트시트 .badge 토큰(--fs-badge, --space-*, --radius-circle) 기준으로 전 뱃지 동일 크기 통일 */
 .rc-showcase{background:var(--rc-navy);overflow:clip;padding-bottom:clamp(60px,8vw,140px);}
-.rc-cloud{position:relative;width:100%;height:100vh;overflow:hidden;}
+.rc-cloud{position:relative;width:100%;height:800px;overflow:hidden;}
 .rc-cloud__tag{position:absolute;left:0;top:0;will-change:transform;opacity:0;transition:opacity .25s ease;
   display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;
   /* 상단 pill(.rc-pill)과 완전히 동일한 패딩/모양, 색상도 .rc-pill--light / --outline 그대로 사용.
@@ -165,8 +165,12 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
   font-size:clamp(28px,4.2vw,var(--rc-fs-title));line-height:1.4;letter-spacing:-0.02em;
   white-space:nowrap;margin-inline:auto;padding-inline:20px;}
 .rc-tech__head h2 .accent{color:var(--rc-blue-light);}
-.rc-tech__row{position:relative;z-index:1;display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(20px,2.4vw,40px);
-  padding:0 clamp(20px,8vw,160px) clamp(60px,10vw,140px);}
+/* 카드 5장을 왼쪽에 모아뒀다가, 스크롤에 맞춰 하나씩 오른쪽으로 펼쳐지는 연동 애니메이션
+   (js/card-scroll.js) — 200vh 스크롤 구간 동안 진행률에 따라 각 카드의 --reveal(0~1)을 갱신 */
+.rc-tech__cards-pin{position:relative;height:200vh;}
+.rc-tech__cards-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden;}
+.rc-tech__row{position:relative;z-index:1;display:flex;flex-wrap:nowrap;gap:clamp(20px,2.4vw,40px);
+  padding:0 clamp(20px,8vw,160px);margin-inline:auto;}
 /* Figma 원본 "Notion 카드" 디자인: 흰 카드 + 뒤에 겹쳐 보이는 카드 한 장(하드엣지 box-shadow) +
    좌상단 아웃라인 뱃지 + 중앙 아이콘 + 하단 캡션. 의사요소 대신 box-shadow로 스택 표현(더 안정적) */
 /* .rc-tech__card = 위치 전용 껍데기(자체 배경 없음). 뒤에 보이는 그라디언트 카드(::before)와
@@ -175,8 +179,8 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
    (같은 요소의 background와 z-index:-1 의사요소를 함께 쓰면 의사요소가 항상 그 배경 위에
    그려져 버려서 전체를 뒤덮는 문제가 있었음) */
 .rc-tech__card{position:relative;flex-shrink:0;width:clamp(150px,19.5vw,375px);height:clamp(200px,25.6vw,492px);
-  opacity:0;transform:translateY(56px);transition:opacity .6s ease,transform .6s ease;}
-.rc-tech__card.is-visible{opacity:1;transform:translateY(0);}
+  --reveal:0;--stack-x:0px;
+  opacity:var(--reveal);transform:translateX(calc(var(--stack-x) * (1 - var(--reveal))));}
 /* 뒤에 겹쳐 보이는 카드 한 장 — 은은한 금속성 그라디언트 */
 /* 진짜 브러시드 메탈 느낌 — 밝고 어두운 띠가 번갈아 나오는 다중 스탑 그라디언트로 광택 표현 */
 /* 앞판(.rc-tech__card-face)과 같은 톤의 부드러운 단일 그라디언트 — 줄무늬(brushed metal) 대신
@@ -189,11 +193,6 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
   box-shadow:0 16px 32px rgba(0,0,0,.12),inset 0 0 20px rgba(182,182,182,.25);
   display:flex;flex-direction:column;align-items:center;
   padding:clamp(28px,3.6vw,44px) clamp(16px,1.8vw,24px) clamp(36px,4.4vw,52px);}
-.rc-tech__card:nth-child(1){transition-delay:0s;}
-.rc-tech__card:nth-child(2){transition-delay:.12s;}
-.rc-tech__card:nth-child(3){transition-delay:.24s;}
-.rc-tech__card:nth-child(4){transition-delay:.36s;}
-.rc-tech__card:nth-child(5){transition-delay:.48s;}
 .rc-tech__card-badge{align-self:flex-start;border:1px solid rgba(7,20,56,.25);border-radius:var(--radius-circle);
   padding:10px clamp(18px,2vw,24px);font-weight:var(--rc-fw-light);font-size:clamp(16px,1.4vw,20px);color:var(--rc-navy);}
 .rc-tech__card-icon{width:56%;max-width:150px;height:auto;object-fit:contain;margin:auto 0 clamp(20px,2.6vw,32px);}
