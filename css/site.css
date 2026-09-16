@@ -213,10 +213,14 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
   line-height:1.4;text-align:center;letter-spacing:-0.01em;}
 
 /* ---------- feature cards ---------- */
-.rc-features{background:var(--rc-white);padding-block:clamp(60px,10vw,120px);}
+.rc-features{background:var(--rc-white);padding-block:clamp(60px,10vw,120px);overflow-x:clip;}
 .rc-features__stack{display:flex;flex-direction:column;gap:clamp(16px,2vw,20px);}
+/* 카드마다 스크롤로 화면에 들어올 때 우측에서 좌측으로 한 장씩 날아들어옴 (기존 data-reveal +
+   main.js IntersectionObserver가 순서대로 트리거하므로 세로로 쌓인 카드들이 자연스럽게 하나씩 반응) */
 .rc-feature-card{border-radius:20px;padding:clamp(24px,4.3vw,80px);display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);
-  align-items:center;justify-content:space-between;color:var(--rc-white);}
+  align-items:center;justify-content:space-between;color:var(--rc-white);
+  opacity:0;transform:translateX(140px);transition:opacity .7s ease,transform .7s ease;}
+.rc-feature-card.is-visible{opacity:1;transform:translateX(0);}
 .rc-feature-card--navy{background:var(--rc-navy);}
 .rc-feature-card--green{background:var(--rc-green);}
 .rc-feature-card__copy{display:flex;flex-direction:column;gap:clamp(20px,3vw,48px);flex:1 1 420px;max-width:56ch;}
@@ -290,5 +294,13 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
   .rc-footer__legal{align-items:flex-start;}
 }
 
-/* 커스텀 커서 점(노란 원)은 제거 — 시스템 마우스 커서가 안 보이게 되는 문제가 있어
-   기본 커서를 그대로 쓰고, 뱃지 밀림 인터랙션만 유지 (js/cursor.js) */
+/* ---------- 커스텀 커서: 노란 원 (js/cursor.js) ----------
+   이전엔 CSS @media(pointer:fine)로만 켰는데, 그 미디어 피처가 기대와 다르게 보고되는
+   환경에서 점이 영원히 안 보이는 버그가 있었다. 이제는 실제 mousemove가 처음 발생했을 때
+   JS가 body에 붙이는 .rc-cursor-active 클래스로만 켠다 — 훨씬 확실하게 동작한다. */
+#rc-cursor-dot{position:fixed;top:0;left:0;width:22px;height:22px;margin:-11px 0 0 -11px;
+  border-radius:50%;background:var(--rc-yellow);border:2px solid rgba(7,20,56,.25);
+  pointer-events:none;z-index:9999;opacity:0;transition:opacity .15s ease;}
+body.rc-cursor-active{cursor:none;}
+body.rc-cursor-active a,body.rc-cursor-active button,body.rc-cursor-active [role="button"]{cursor:none;}
+body.rc-cursor-active #rc-cursor-dot{opacity:1;}
