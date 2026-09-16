@@ -180,12 +180,11 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 .rc-tech__card.is-visible{opacity:1;transform:translateY(0);}
 /* 뒤에 겹쳐 보이는 카드 한 장 — 은은한 금속성 그라디언트 */
 /* 진짜 브러시드 메탈 느낌 — 밝고 어두운 띠가 번갈아 나오는 다중 스탑 그라디언트로 광택 표현 */
+/* 앞판(.rc-tech__card-face)과 같은 톤의 부드러운 단일 그라디언트 — 줄무늬(brushed metal) 대신
+   자연스럽게 한 방향으로 은은하게 어두워지는 카드 뒷면 느낌 */
 .rc-tech__card::before{content:"";position:absolute;inset:14px -14px -14px 14px;
   border-radius:20px;
-  background:linear-gradient(135deg,
-    #aeb2bd 0%,#d6d9e0 10%,#f5f6f9 22%,#ffffff 32%,
-    #e2e5ec 42%,#c3c7d1 52%,#eef0f4 64%,#ffffff 74%,
-    #d8dbe2 86%,#b6bac4 100%);}
+  background:linear-gradient(135deg,#f4f5f7 0%,#e7e9ee 55%,#d6d9e1 100%);}
 .rc-tech__card-face{position:relative;width:100%;height:100%;border-radius:30px;
   background:linear-gradient(180.39deg,#ffffff 82.075%,#eaeaea 99.736%);
   box-shadow:0 16px 32px rgba(0,0,0,.12),inset 0 0 20px rgba(182,182,182,.25);
