@@ -14,10 +14,9 @@
   --rc-placeholder-video:#b2b2b2; /* 포트폴리오 영상 자리, Figma 원본도 회색 박스 */
   --rc-hairline:#263253;
 
-  /* 실측 컨테이너: 1920 뷰포트 기준 좌우 120px 거터 → 1680px 컨텐츠 */
-  --rc-container:1680px;
-  /* footer/feature 섹션은 1800/1816px 컨테이너 실측 */
-  --rc-container-lg:1816px;
+  /* 전 섹션 컨테이너 폭 통일 */
+  --rc-container:1800px;
+  --rc-container-lg:1800px;
 
   /* 텍스트 사이즈 전면 수정 — 타이틀/서브텍스트/본문 3단 체계로 통일 (모두 clamp() 상한값) */
   --rc-fs-title:80px;   /* 각 섹션 메인 헤드라인 */
