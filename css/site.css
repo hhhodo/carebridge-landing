@@ -128,13 +128,14 @@ body{background:var(--rc-white);}
 .rc-cloud{position:relative;width:100%;height:clamp(360px,38vw,600px);overflow:hidden;}
 .rc-cloud__tag{position:absolute;left:0;top:0;will-change:transform;opacity:0;transition:opacity .25s ease;
   display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;
-  padding:var(--space-3) var(--space-5);border-radius:var(--radius-circle);
-  font-weight:var(--fw-strong);font-size:var(--fs-badge);letter-spacing:0;
+  /* 상단 pill(.rc-pill)과 같은 패딩 기준, font-size만 24px로 고정 */
+  padding:clamp(10px,1.2vw,24px) clamp(20px,2.5vw,48px);border-radius:var(--radius-circle);
+  font-weight:var(--fw-strong);font-size:24px;letter-spacing:-0.02em;
   color:rgba(255,255,255,.8);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);}
 .rc-cloud__tag.is-ready{opacity:1;}
 .rc-cloud__tag--solid{background:linear-gradient(135deg,#e7e9f2,#c7ccdd);color:var(--rc-navy);border-color:transparent;}
-.rc-cloud__tag--icon{padding:var(--space-3);width:calc(var(--fs-badge) + var(--space-3) * 2 + 4px);
-  height:calc(var(--fs-badge) + var(--space-3) * 2 + 4px);}
+.rc-cloud__tag--icon{padding:clamp(10px,1.2vw,24px);width:calc(24px + clamp(10px,1.2vw,24px) * 2);
+  height:calc(24px + clamp(10px,1.2vw,24px) * 2);}
 
 /* ---------- tech stack ---------- */
 .rc-tech{position:relative;background:var(--rc-navy);overflow:clip;}
