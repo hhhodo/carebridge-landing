@@ -158,29 +158,28 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 
 /* ---------- tech stack ---------- */
 .rc-tech{position:relative;background:var(--rc-navy);overflow:clip;}
-.rc-tech__bg{position:absolute;inset:0;z-index:0;
-  background:
-    radial-gradient(circle at 0% 0%,rgba(255,251,214,.8) 0%,transparent 45%),
-    radial-gradient(circle at 100% 0%,rgba(210,255,222,.7) 0%,transparent 50%),
-    radial-gradient(circle at 0% 100%,rgba(255,222,247,.6) 0%,transparent 50%),
-    radial-gradient(circle at 100% 100%,rgba(214,224,255,.75) 0%,transparent 55%),
-    #fff;
-  opacity:.5;}
+/* 실제 Figma 원본의 파스텔 그라디언트 이미지로 복원 (CSS 근사 그라디언트보다 원본이 예쁘다는 피드백) */
+.rc-tech__bg{position:absolute;inset:0;z-index:0;}
+.rc-tech__bg img{width:100%;height:100%;object-fit:cover;opacity:.55;}
 .rc-tech__bg::after{content:"";position:absolute;inset:0;background:var(--rc-navy);opacity:.35;}
 .rc-tech__head{position:relative;z-index:1;text-align:center;padding-block:clamp(60px,10vw,140px) clamp(40px,6vw,80px);}
 .rc-tech__head h2{color:var(--rc-white);font-weight:var(--fw-strong);
   font-size:clamp(26px,4.2vw,var(--rc-fs-title));line-height:1.4;letter-spacing:-0.02em;max-width:38ch;margin-inline:auto;}
 .rc-tech__head h2 .accent{color:var(--rc-blue-light);}
-.rc-tech__row{position:relative;z-index:1;display:flex;gap:clamp(12px,1.6vw,32px);overflow-x:auto;
-  padding:0 clamp(20px,8vw,160px) clamp(60px,10vw,140px);scrollbar-width:none;}
-.rc-tech__row::-webkit-scrollbar{display:none;}
-.rc-tech__row img{flex-shrink:0;width:clamp(140px,19.5vw,375px);height:clamp(184px,25.6vw,492px);object-fit:cover;border-radius:12px;
+.rc-tech__row{position:relative;z-index:1;display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(12px,1.6vw,32px);
+  padding:0 clamp(20px,8vw,160px) clamp(60px,10vw,140px);}
+.rc-tech__card{flex-shrink:0;width:clamp(140px,17vw,260px);display:flex;flex-direction:column;align-items:center;gap:16px;
+  padding:clamp(20px,2vw,32px) clamp(16px,1.6vw,24px);border-radius:20px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
   opacity:0;transform:translateY(56px);transition:opacity .6s ease,transform .6s ease;}
-.rc-tech__row img.is-visible{opacity:1;transform:translateY(0);}
-.rc-tech__row img:nth-child(1){transition-delay:0s;}
-.rc-tech__row img:nth-child(2){transition-delay:.14s;}
-.rc-tech__row img:nth-child(3){transition-delay:.28s;}
-.rc-tech__row img:nth-child(4){transition-delay:.42s;}
+.rc-tech__card.is-visible{opacity:1;transform:translateY(0);}
+.rc-tech__card:nth-child(1){transition-delay:0s;}
+.rc-tech__card:nth-child(2){transition-delay:.12s;}
+.rc-tech__card:nth-child(3){transition-delay:.24s;}
+.rc-tech__card:nth-child(4){transition-delay:.36s;}
+.rc-tech__card:nth-child(5){transition-delay:.48s;}
+.rc-tech__card img{width:100%;height:clamp(120px,12vw,180px);object-fit:contain;}
+.rc-tech__card p{color:var(--rc-white);font-weight:var(--rc-fw-light);font-size:clamp(14px,1.1vw,18px);text-align:center;}
 
 /* ---------- portfolio row (static — no carousel/arrows) ---------- */
 .rc-portfolio{background:var(--rc-navy);padding-block:clamp(60px,10vw,120px);overflow:clip;}
