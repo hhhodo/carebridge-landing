@@ -182,7 +182,7 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 /* 진짜 브러시드 메탈 느낌 — 밝고 어두운 띠가 번갈아 나오는 다중 스탑 그라디언트로 광택 표현 */
 .rc-tech__card::before{content:"";position:absolute;inset:14px -14px -14px 14px;
   border-radius:20px;
-  background:linear-gradient(100deg,
+  background:linear-gradient(135deg,
     #aeb2bd 0%,#d6d9e0 10%,#f5f6f9 22%,#ffffff 32%,
     #e2e5ec 42%,#c3c7d1 52%,#eef0f4 64%,#ffffff 74%,
     #d8dbe2 86%,#b6bac4 100%);}
