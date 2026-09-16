@@ -122,7 +122,9 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 .rc-char.is-filled{opacity:1;}
 
 /* ---------- mid statement (그래서 케어브릿지는...) ---------- */
-.rc-mid{background:var(--rc-navy);color:var(--rc-white);min-height:60vh;display:flex;align-items:center;justify-content:center;padding-block:clamp(80px,10vw,160px);text-align:center;}
+.rc-mid{background:var(--rc-navy);color:var(--rc-white);text-align:center;}
+.rc-mid__pin{position:relative;height:200vh;}
+.rc-mid__inner{position:sticky;top:0;min-height:100vh;display:flex;align-items:center;justify-content:center;}
 .rc-mid h2{font-weight:var(--fw-strong);font-size:clamp(28px,4.2vw,var(--rc-fs-title));line-height:1.4;letter-spacing:-0.02em;max-width:22ch;margin-inline:auto;}
 .rc-mid h2 .accent{color:var(--rc-yellow);}
 
@@ -142,8 +144,8 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 
 /* ---------- showcase: 뱃지가 중력으로 떨어져 쌓이는 물리 인터랙션 (js/cloud-physics.js) ----------
    치트시트 .badge 토큰(--fs-badge, --space-*, --radius-circle) 기준으로 전 뱃지 동일 크기 통일 */
-.rc-showcase{background:var(--rc-navy);padding-block:clamp(40px,7vw,80px);overflow:clip;}
-.rc-cloud{position:relative;width:100%;height:clamp(360px,38vw,600px);overflow:hidden;}
+.rc-showcase{background:var(--rc-navy);overflow:clip;}
+.rc-cloud{position:relative;width:100%;height:100vh;overflow:hidden;}
 .rc-cloud__tag{position:absolute;left:0;top:0;will-change:transform;opacity:0;transition:opacity .25s ease;
   display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;
   /* 상단 pill(.rc-pill)과 완전히 동일한 패딩/모양, 색상도 .rc-pill--light / --outline 그대로 사용.
