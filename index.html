@@ -38,30 +38,27 @@ Footer      → navy → CTA + 4 nav columns (측정 문의하기 컬럼만 버�
 </head>
 <body>
 
-<nav class="rc-nav" id="nav">
-  <span class="rc-nav__mark">RECONERS</span>
-  <a class="rc-btn" href="#contact">문의하기</a>
-</nav>
-
-<!-- Hero — full-bleed video, bottom-left/right overlay content -->
+<!-- Hero — full-bleed navy, real exported decorative mark + floating labels, bottom-left/right overlay content -->
 <section class="rc-hero">
-  <div class="rc-hero__media">
-    <img src="assets/images/hero-video.png" alt="리커너스가 만든 서비스 화면 목업" loading="eager">
+  <div class="rc-hero__media" aria-hidden="true">
+    <img src="assets/images/hero-video.png" alt="">
   </div>
   <div class="container--rc rc-hero__content">
     <div class="rc-hero__copy" data-reveal>
       <p class="rc-hero__sub">오늘의 완성을 넘어 내일의 운영으로<span class="accent">.</span></p>
-      <h1 class="rc-hero__h1">지속가능한 서비스를 설계합니다</h1>
+      <h1 class="rc-hero__h1">지속 가능한 서비스를 설계합니다</h1>
     </div>
     <div class="rc-hero__side" data-reveal>
-      <img src="assets/images/vec-rect-541.svg" alt="" aria-hidden="true">
-      <p>리커너스는 일회성 제작에 그치지 않고, 장기적인 운영과 확장까지 고려한 비즈니스 아키텍처를 구축합니다.</p>
+      <p>리커너스는 일회성 제작에 그치지 않고, 장기적인 운영과 확장까지 고려한 단단한 비즈니스 아키텍처를 구축합니다.</p>
     </div>
   </div>
 </section>
 
-<!-- Statement — full-bleed navy, left-aligned copy (측정 offset 120/1920) -->
+<!-- Statement — white bg + soft decorative gradient blob (측정 offset 120/1920) -->
 <section class="rc-statement">
+  <div class="rc-statement__decor" aria-hidden="true">
+    <img src="assets/images/statement-bg.png" alt="" class="rc-statement__blob">
+  </div>
   <div class="container--rc rc-statement__inner">
     <h2 data-reveal>서비스는 오픈할 때보다,<br>수정과 운영이 시작될 때<br>실력이 드러납니다</h2>
     <div class="rc-statement__body">
@@ -81,12 +78,16 @@ Footer      → navy → CTA + 4 nav columns (측정 문의하기 컬럼만 버�
 
 <!-- Pill row -->
 <section class="rc-pills">
-  <div class="container--rc rc-pills__row" data-reveal>
-    <span class="rc-pill rc-pill--light">반응형</span>
-    <span class="rc-pill rc-pill--light">홈페이지</span>
-    <span class="rc-pill rc-pill--light">부터,</span>
-    <span class="rc-pill rc-pill--outline">모바일</span>
-    <span class="rc-pill rc-pill--outline">앱제작까지</span>
+  <div class="container--rc rc-pills__stack" data-reveal>
+    <div class="rc-pills__row">
+      <span class="rc-pill rc-pill--light">반응형</span>
+      <span class="rc-pill rc-pill--light">홈페이지</span>
+      <span class="rc-pill rc-pill--light">부터,</span>
+    </div>
+    <div class="rc-pills__row">
+      <span class="rc-pill rc-pill--outline">모바일</span>
+      <span class="rc-pill rc-pill--outline">앱제작까지</span>
+    </div>
   </div>
 </section>
 
@@ -101,7 +102,7 @@ Footer      → navy → CTA + 4 nav columns (측정 문의하기 컬럼만 버�
 <section class="rc-tech">
   <div class="rc-tech__bg"><img src="assets/images/tech-section-bg.png" alt="" aria-hidden="true"></div>
   <div class="rc-tech__head" data-reveal>
-    <h2>다양한 기능을 활용한 자체 솔루션으로<br>안정적인 동작과 효율적인 관리를 지원합니다</h2>
+    <h2>다양한 기능을 활용한 자체 솔루션<br><span class="accent">Nore Framework</span>로<br>안정적인 동작과 효율적인 관리를 지원합니다</h2>
   </div>
   <div class="rc-tech__row" data-reveal>
     <img src="assets/images/logo-notion.png" alt="Notion" loading="lazy">
@@ -115,13 +116,17 @@ Footer      → navy → CTA + 4 nav columns (측정 문의하기 컬럼만 버�
 
 <!-- Portfolio — static row, no carousel/arrows -->
 <section class="rc-portfolio">
+  <div class="rc-portfolio__head" data-reveal>
+    <h2>단단한 기반 위에서<br>완성된 가치를 프로젝트</h2>
+    <p>단순히 화면을 빠르게 만드는 것이 아닌 수정과 확장,<br>운영까지 이어질 수 있는 구조를 설계합니다.</p>
+  </div>
   <div class="rc-portfolio__row" id="portfolioRow">
     <article class="rc-portfolio__item" data-reveal>
       <div class="rc-portfolio__media"></div>
       <h3>뷰노</h3>
       <p>의료 AI 솔루션 반응형 홈페이지</p>
     </article>
-    <article class="rc-portfolio__item" data-reveal>
+    <article class="rc-portfolio__item rc-portfolio__item--circle" data-reveal>
       <div class="rc-portfolio__media"></div>
       <h3>모두의 통근</h3>
       <p>통근버스 예약 모바일 어플리케이션 플랫폼</p>
@@ -131,7 +136,7 @@ Footer      → navy → CTA + 4 nav columns (측정 문의하기 컬럼만 버�
       <h3>삼미스피커</h3>
       <p>국내 스피커 산업의 선두주자</p>
     </article>
-    <article class="rc-portfolio__item" data-reveal>
+    <article class="rc-portfolio__item rc-portfolio__item--circle" data-reveal>
       <div class="rc-portfolio__media"></div>
       <h3>쇼:크립트</h3>
       <p>뮤지컬 컨텐츠 거래 웹솔루션</p>
@@ -141,7 +146,7 @@ Footer      → navy → CTA + 4 nav columns (측정 문의하기 컬럼만 버�
       <h3>서울포레스트</h3>
       <p>정신건강의학과의원 반응형 홈페이지</p>
     </article>
-    <article class="rc-portfolio__item" data-reveal>
+    <article class="rc-portfolio__item rc-portfolio__item--circle" data-reveal>
       <div class="rc-portfolio__media"></div>
       <h3>청소용병</h3>
       <p>청소 중개 모바일 어플리케이션 플랫폼</p>
