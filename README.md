@@ -1,6 +1,6 @@
-# RECONERS Landing Page
+# CAREBRIDGE Landing Page
 
-B2B 웹·앱 크로스플랫폼 개발 기업 "리커너스" 원페이지 랜딩. 브랜드명은 영문(RECONERS), 본문 콘텐츠는 한글.
+B2B 웹·앱 크로스플랫폼 개발 기업 "케어브릿지" 원페이지 랜딩. 브랜드명은 영문(CAREBRIDGE), 본문 콘텐츠는 한글.
 
 ## 레퍼런스 취득 경로
 
@@ -55,8 +55,9 @@ Figma 파일 `BrVaTxFSnaAlv6IT2ZRvhs`, node `184:3` ("MORRIS" 최상위 프레�
 
 전체 페이지에서 클릭 가능한 버튼/CTA는 **"문의하기" 단 하나**만 남겼습니다.
 
-- 상단 nav의 "문의하기"만 `.rc-btn` 버튼(→ `#contact`)으로 유지.
-- 푸터 "문의하기" 컬럼 헤딩 아래에 실제 버튼(`mailto:hello@reconers.com`)을 추가.
+- 푸터 "문의하기" 컬럼 헤딩 아래에 실제 버튼(`mailto:hello@carebridge.com`)을 추가한 것이
+  페이지 전체에서 유일한 버튼입니다 (초기 빌드에 있던 상단 고정 nav는 레퍼런스에 없던 것이라
+  이후 제거).
 - 제거한 것: 푸터의 "회사소개서" 다운로드 버튼+아이콘, "인스타그램" 링크+아이콘.
 - 유지한 것(버튼이 아닌 텍스트/링크로 판단): 프로젝트/회사소개/구성원 nav 라벨, 프로젝트 하위 리스트
   (전체/모바일앱/반응형 웹사이트/브랜딩), 문의하기 하위 리스트(프로젝트 문의/채용 문의는 버튼 스타일이
@@ -74,7 +75,7 @@ Figma 파일 `BrVaTxFSnaAlv6IT2ZRvhs`, node `184:3` ("MORRIS" 최상위 프레�
 
 - `index.html` — 시맨틱 마크업, variant/layout 주석 포함
 - `css/styles.css` — 공유 디자인 킷 (불변, 다른 sibling과 100% 동일)
-- `css/site.css` — RECONERS 브랜드 토큰 + 컴포넌트
+- `css/site.css` — CAREBRIDGE 브랜드 토큰 + 컴포넌트
 - `js/main.js` — 스크롤 reveal (IntersectionObserver)
 - `js/cloud-physics.js` — 쇼케이스 뱃지 낙하/적재 물리 시뮬레이션 (Matter.js)
 - `.github/workflows/deploy.yml` — GitHub Pages 배포 (Actions, noksu-landing과 동일 패턴)
@@ -102,4 +103,4 @@ Figma 파일 `BrVaTxFSnaAlv6IT2ZRvhs`, node `184:3` ("MORRIS" 최상위 프레�
 4. **헬스케어 브랜드 피벗**: 사용자가 전체 콘텐츠를 헬스케어 도메인으로 바꿔달라고 요청해, 레이아웃/
    그리드/토큰 시스템은 그대로 두고 카피 전체(히어로/스테이트먼트/필/쇼케이스 뱃지/기술 섹션/
    포트폴리오 7건/기능 카드 3종/푸터)를 원격진료·환자 모니터링·재활 케어 등 헬스케어 서사로
-   재작성했습니다. 브랜드명 "리커너스"는 유지하되 포지셔닝만 디지털 헬스케어 파트너로 전환했습니다.
+   재작성했습니다. 브랜드명 "케어브릿지"는 유지하되 포지셔닝만 디지털 헬스케어 파트너로 전환했습니다.

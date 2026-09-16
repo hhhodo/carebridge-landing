@@ -1,5 +1,5 @@
 /* =========================================================
-   RECONERS brand tokens + components
+   CAREBRIDGE brand tokens + components
    실측 기준(1920 데스크톱, Figma node 184:3)에서 뽑은 값만 사용.
    ========================================================= */
 :root{
@@ -103,7 +103,7 @@ body{background:var(--rc-white);}
   font-size:clamp(20px,3.3vw,var(--rc-fs-statement-body));line-height:1.4;letter-spacing:-0.02em;}
 .rc-statement__body p .accent{color:var(--rc-blue);}
 
-/* ---------- mid statement (그래서 리커너스는...) ---------- */
+/* ---------- mid statement (그래서 케어브릿지는...) ---------- */
 .rc-mid{background:var(--rc-navy);color:var(--rc-white);min-height:60vh;display:flex;align-items:center;justify-content:center;padding-block:clamp(80px,10vw,160px);text-align:center;}
 .rc-mid h2{font-weight:var(--fw-strong);font-size:clamp(28px,4vw,var(--rc-fs-mid-h));line-height:1.4;letter-spacing:-0.02em;max-width:22ch;margin-inline:auto;}
 .rc-mid h2 .accent{color:var(--rc-yellow);}
