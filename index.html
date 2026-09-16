@@ -19,7 +19,7 @@ Hero        → navy, CODED decorative R-mark + floating labels (no raster bg) �
 Statement   → white bg (측정: 배경 navy 아님, 장식 도형만 navy) → 좌측 정렬 카피, CSS 블롭 장식 (컨테이너 1680)
 Mid stmt    → navy → centered headline
 Pills       → navy → 좌측 정렬 2행 (3 solid + 2 outline, 측정 88px)
-Showcase    → navy → 서비스 태그 클라우드 (실제로는 스크린샷이 아니라 회전된 필 태그 모음이었음 — CSS로 재구현)
+Showcase    → navy → 서비스 뱃지가 위에서 낙하해 쌓이는 물리 인터랙션 (Matter.js, js/cloud-physics.js)
 Tech        → navy + CSS 그라디언트 메시 배경 → 헤딩(Nore Framework 포함) + 실제 로고 이미지 행 (375x492 측정)
 Portfolio   → navy → 헤딩/서브카피 + static horizontal row (NOT a carousel), 정사각/원형 교차 634px 측정
 Features    → white → 3 stacked cards (측정 1696-1816), navy/green/navy, 그래픽은 CSS 원/필/SVG로 코드 구현 (래스터 아님)
@@ -30,8 +30,8 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>리커너스 — 오늘의 완성을 넘어 내일의 운영으로</title>
-<meta name="description" content="웹·앱 크로스플랫폼 개발 기업 리커너스. 오픈 이후의 수정과 운영까지 고려한 자체 솔루션 기반 서비스를 설계합니다.">
+<title>리커너스 — 오늘의 진료를 넘어 내일의 회복으로</title>
+<meta name="description" content="디지털 헬스케어 파트너 리커너스. 진료 이후의 회복과 관리까지 고려한 자체 케어 솔루션을 설계합니다.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/site.css">
@@ -59,11 +59,11 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
   </div>
   <div class="container--rc rc-hero__content">
     <div class="rc-hero__copy" data-reveal>
-      <p class="rc-hero__sub">오늘의 완성을 넘어 내일의 운영으로<span class="accent">.</span></p>
-      <h1 class="rc-hero__h1">지속 가능한 서비스를 설계합니다</h1>
+      <p class="rc-hero__sub">오늘의 진료를 넘어 내일의 회복으로<span class="accent">.</span></p>
+      <h1 class="rc-hero__h1">지속 가능한 케어를 설계합니다</h1>
     </div>
     <div class="rc-hero__side" data-reveal>
-      <p>리커너스는 일회성 제작에 그치지 않고, 장기적인 운영과 확장까지 고려한 단단한 비즈니스 아키텍처를 구축합니다.</p>
+      <p>리커너스는 일회성 진료에 그치지 않고, 장기적인 회복과 관리까지 고려한 단단한 헬스케어 아키텍처를 구축합니다.</p>
     </div>
   </div>
 </section>
@@ -77,11 +77,11 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
     <span class="rc-blob rc-blob--glow"></span>
   </div>
   <div class="container--rc rc-statement__inner">
-    <h2 data-reveal>서비스는 오픈할 때보다,<br>수정과 운영이 시작될 때<br>실력이 드러납니다</h2>
+    <h2 data-reveal>환자 경험은 진료실 안에서보다,<br>퇴원 이후 회복이 시작될 때<br>진가가 드러납니다</h2>
     <div class="rc-statement__body">
-      <p data-reveal>많은 결과물은 오픈 직후에는 비슷해 보입니다.</p>
-      <p data-reveal>하지만 시간이 지나 수정 요청이 생기고, 기능이 추가되고, 담당자가 바뀌고,<br>서비스가 확장되기 시작하면 처음 만든 구조의 차이가 드러납니다.</p>
-      <p data-reveal>리커너스는 서비스가 &lsquo;오픈&rsquo;에서 끝나는 일이 아니라, 기업이 계속 활용하고<br>운영해야 하는 <span class="accent">비즈니스 자산</span>으로 바라봅니다.</p>
+      <p data-reveal>많은 케어 프로그램은 초기에는 비슷해 보입니다.</p>
+      <p data-reveal>하지만 시간이 지나 재발 관리가 필요해지고, 복약이 늘고, 담당 의료진이 바뀌고,<br>돌봄 범위가 확장되기 시작하면 처음 설계한 케어 구조의 차이가 드러납니다.</p>
+      <p data-reveal>리커너스는 헬스케어가 &lsquo;진료&rsquo;에서 끝나는 일이 아니라, 환자가 계속 관리받고<br>회복해야 하는 <span class="accent">생애 건강 자산</span>으로 바라봅니다.</p>
     </div>
   </div>
 </section>
@@ -89,7 +89,7 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
 <!-- Mid statement — centered big headline -->
 <section class="rc-mid">
   <div class="container--rc">
-    <h2 data-reveal>그래서 리커너스는<br>자체 솔루션 위에 단단한 서비스를 설계합니다<span class="accent">.</span></h2>
+    <h2 data-reveal>그래서 리커너스는<br>자체 케어 솔루션 위에 단단한 회복 여정을 설계합니다<span class="accent">.</span></h2>
   </div>
 </section>
 
@@ -97,43 +97,43 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
 <section class="rc-pills">
   <div class="container--rc rc-pills__stack" data-reveal>
     <div class="rc-pills__row">
-      <span class="rc-pill rc-pill--light">반응형</span>
-      <span class="rc-pill rc-pill--light">홈페이지</span>
+      <span class="rc-pill rc-pill--light">비대면 진료</span>
+      <span class="rc-pill rc-pill--light">환자 모니터링</span>
       <span class="rc-pill rc-pill--light">부터,</span>
     </div>
     <div class="rc-pills__row">
-      <span class="rc-pill rc-pill--outline">모바일</span>
-      <span class="rc-pill rc-pill--outline">앱제작까지</span>
+      <span class="rc-pill rc-pill--outline">만성질환 관리</span>
+      <span class="rc-pill rc-pill--outline">재활 케어까지</span>
     </div>
   </div>
 </section>
 
-<!-- Showcase — 서비스 태그 클라우드 (실측 배치를 흩뿌린 콜라주 형태로 재현, 래스터 이미지 아님) -->
+<!-- Showcase — 서비스 뱃지가 중력으로 낙하해 쌓이는 물리 인터랙션 (Matter.js) -->
 <section class="rc-showcase">
   <div class="container--rc-lg">
-    <div class="rc-cloud" data-reveal aria-label="리커너스가 제공하는 서비스 목록">
-      <span class="rc-cloud__tag rc-cloud__tag--solid" style="left:15%;top:26%;--r:-20deg">일러스트</span>
-      <span class="rc-cloud__tag rc-cloud__tag--solid rc-cloud__tag--md" style="left:11%;top:41%;--r:-4deg">프로그램 개발</span>
-      <span class="rc-cloud__tag rc-cloud__tag--solid rc-cloud__tag--lg" style="left:47%;top:29%;--r:-4deg">브랜드 아이덴티티 구축</span>
-      <span class="rc-cloud__tag rc-cloud__tag--solid rc-cloud__tag--md" style="left:67%;top:33%;--r:-84deg">컨텐츠 기획·디자인</span>
-      <span class="rc-cloud__tag" style="left:43.5%;top:56%;--r:-3deg">로고</span>
-      <span class="rc-cloud__tag" style="left:53.5%;top:63%;--r:6deg">React</span>
-      <span class="rc-cloud__tag rc-cloud__tag--solid rc-cloud__tag--md" style="left:39%;top:70%;--r:-6deg">UX/UI 기획·디자인</span>
-      <span class="rc-cloud__tag" style="left:8%;top:59%;--r:-8deg">반응형웹</span>
-      <span class="rc-cloud__tag" style="left:23%;top:52%;--r:10deg">퍼블리싱</span>
-      <span class="rc-cloud__tag" style="left:57%;top:74%;--r:4deg">모션그래픽</span>
-      <span class="rc-cloud__tag" style="left:66%;top:63%;--r:-84deg">디지털 컨텐츠</span>
-      <span class="rc-cloud__tag rc-cloud__tag--icon" style="left:76%;top:41%;--r:0deg">&amp;</span>
-      <span class="rc-cloud__tag" style="left:89%;top:47%;--r:-3deg">패키지</span>
-      <span class="rc-cloud__tag" style="left:85%;top:62%;--r:4deg">하이브리드 앱</span>
-      <span class="rc-cloud__tag" style="left:90%;top:74%;--r:-3deg">아이덴티티가이드북</span>
-      <span class="rc-cloud__tag" style="left:12%;top:74%;--r:-4deg">포스터 및 브로슈어</span>
-      <span class="rc-cloud__tag" style="left:24%;top:84%;--r:4deg">브랜드 베이직 시스템</span>
-      <span class="rc-cloud__tag" style="left:6%;top:93%;--r:0deg">영상</span>
-      <span class="rc-cloud__tag" style="left:42%;top:93%;--r:-3deg">브랜드 홈페이지</span>
-      <span class="rc-cloud__tag" style="left:61%;top:93%;--r:3deg">앱솔루션</span>
-      <span class="rc-cloud__tag" style="left:74%;top:92%;--r:-3deg">Node</span>
-      <span class="rc-cloud__tag rc-cloud__tag--icon" style="left:80%;top:92%;--r:0deg">&amp;</span>
+    <div class="rc-cloud" aria-label="리커너스 헬스케어가 제공하는 서비스 목록">
+      <span class="rc-cloud__tag rc-cloud__tag--solid">원격 진료</span>
+      <span class="rc-cloud__tag rc-cloud__tag--solid rc-cloud__tag--md">환자 모니터링</span>
+      <span class="rc-cloud__tag rc-cloud__tag--solid rc-cloud__tag--lg">케어 플랫폼 구축</span>
+      <span class="rc-cloud__tag rc-cloud__tag--solid rc-cloud__tag--md">복약 관리</span>
+      <span class="rc-cloud__tag">EMR 연동</span>
+      <span class="rc-cloud__tag">React</span>
+      <span class="rc-cloud__tag rc-cloud__tag--solid rc-cloud__tag--md">헬스케어 UX/UI</span>
+      <span class="rc-cloud__tag">웨어러블 연동</span>
+      <span class="rc-cloud__tag">재활 케어</span>
+      <span class="rc-cloud__tag">임상 데이터 분석</span>
+      <span class="rc-cloud__tag">케어 코디네이션</span>
+      <span class="rc-cloud__tag rc-cloud__tag--icon">&amp;</span>
+      <span class="rc-cloud__tag">알림 패키지</span>
+      <span class="rc-cloud__tag">하이브리드 앱</span>
+      <span class="rc-cloud__tag">헬스 가이드북</span>
+      <span class="rc-cloud__tag">리포트 및 브로슈어</span>
+      <span class="rc-cloud__tag">케어 베이직 시스템</span>
+      <span class="rc-cloud__tag">영상</span>
+      <span class="rc-cloud__tag">헬스케어 홈페이지</span>
+      <span class="rc-cloud__tag">앱 솔루션</span>
+      <span class="rc-cloud__tag">Node</span>
+      <span class="rc-cloud__tag rc-cloud__tag--icon">&amp;</span>
     </div>
   </div>
 </section>
@@ -142,7 +142,7 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
 <section class="rc-tech">
   <div class="rc-tech__bg" aria-hidden="true"></div>
   <div class="rc-tech__head" data-reveal>
-    <h2>다양한 기능을 활용한 자체 솔루션<br><span class="accent">Nore Framework</span>로<br>안정적인 동작과 효율적인 관리를 지원합니다</h2>
+    <h2>다양한 임상 데이터를 활용한 자체 솔루션<br><span class="accent">Nore Framework</span>로<br>안정적인 모니터링과 효율적인 케어 관리를 지원합니다</h2>
   </div>
   <div class="rc-tech__row" data-reveal>
     <img src="assets/images/logo-notion.png" alt="Notion" loading="lazy">
@@ -158,28 +158,28 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
 <section class="rc-portfolio">
   <div class="rc-portfolio__head" data-reveal>
     <h2>단단한 기반 위에서<br>완성된 가치를 프로젝트</h2>
-    <p>단순히 화면을 빠르게 만드는 것이 아닌 수정과 확장,<br>운영까지 이어질 수 있는 구조를 설계합니다.</p>
+    <p>단순히 화면을 빠르게 만드는 것이 아닌 회복과 확장,<br>돌봄까지 이어질 수 있는 구조를 설계합니다.</p>
   </div>
   <div class="rc-portfolio__row" id="portfolioRow">
     <article class="rc-portfolio__item" data-reveal>
       <div class="rc-portfolio__media"></div>
       <h3>뷰노</h3>
-      <p>의료 AI 솔루션 반응형 홈페이지</p>
+      <p>의료 AI 영상판독 솔루션 반응형 홈페이지</p>
     </article>
     <article class="rc-portfolio__item rc-portfolio__item--circle" data-reveal>
       <div class="rc-portfolio__media"></div>
-      <h3>모두의 통근</h3>
-      <p>통근버스 예약 모바일 어플리케이션 플랫폼</p>
+      <h3>케어링크</h3>
+      <p>퇴원 후 재택 모니터링 플랫폼</p>
     </article>
     <article class="rc-portfolio__item" data-reveal>
       <div class="rc-portfolio__media"></div>
-      <h3>삼미스피커</h3>
-      <p>국내 스피커 산업의 선두주자</p>
+      <h3>세인트루카스재활센터</h3>
+      <p>재활 치료 예약 반응형 홈페이지</p>
     </article>
     <article class="rc-portfolio__item rc-portfolio__item--circle" data-reveal>
       <div class="rc-portfolio__media"></div>
-      <h3>쇼:크립트</h3>
-      <p>뮤지컬 컨텐츠 거래 웹솔루션</p>
+      <h3>닥터히어로</h3>
+      <p>비대면 진료 모바일 어플리케이션</p>
     </article>
     <article class="rc-portfolio__item" data-reveal>
       <div class="rc-portfolio__media"></div>
@@ -188,13 +188,13 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
     </article>
     <article class="rc-portfolio__item rc-portfolio__item--circle" data-reveal>
       <div class="rc-portfolio__media"></div>
-      <h3>청소용병</h3>
-      <p>청소 중개 모바일 어플리케이션 플랫폼</p>
+      <h3>메디케어링</h3>
+      <p>만성질환 복약관리 플랫폼</p>
     </article>
     <article class="rc-portfolio__item" data-reveal>
       <div class="rc-portfolio__media"></div>
-      <h3>디플리</h3>
-      <p>사운드 AI 기업 반응형 홈페이지</p>
+      <h3>웰니스포유</h3>
+      <p>시니어 헬스케어 브랜딩</p>
     </article>
   </div>
 </section>
@@ -204,36 +204,36 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
   <div class="container--rc-lg rc-features__stack">
     <article class="rc-feature-card rc-feature-card--navy" data-reveal>
       <div class="rc-feature-card__copy">
-        <h3>체계적인 프로젝트 관리와 수평적 협업</h3>
-        <p>리커너스의 프로젝트는 Notion을 통해 체계적으로 관리합니다. 업무 내용과 의사결정, 수정 요청을 기록하여 프로젝트의 흐름을 명확하게 유지합니다. 프로젝트에 소요되는 시간은 분 단위로 관리되며, 정확한 업무 파악을 바탕으로 효율적인 퍼포먼스를 만들어내며 수평적인 소통 문화는 다양한 아이디어를 이끌어내고, 결과물의 완성도를 높이는 기반이 됩니다.</p>
+        <h3>체계적인 케어 프로젝트 관리와 수평적 협업</h3>
+        <p>리커너스의 케어 프로젝트는 Notion을 통해 체계적으로 관리합니다. 진료 기록과 의사결정, 케어 플랜 변경 요청을 기록하여 회복 여정의 흐름을 명확하게 유지합니다. 프로젝트에 소요되는 시간은 분 단위로 관리되며, 정확한 환자 데이터 파악을 바탕으로 효율적인 케어 퍼포먼스를 만들어내며 수평적인 소통 문화는 다양한 임상 아이디어를 이끌어내고, 케어 결과물의 완성도를 높이는 기반이 됩니다.</p>
       </div>
       <div class="rc-feature-card__media rc-graphic rc-graphic--notion" aria-hidden="true">
         <span class="rc-graphic__shadow"></span>
         <span class="rc-graphic__circle rc-graphic__circle--top">정확성</span>
-        <span class="rc-graphic__pill rc-graphic__pill--right">의사 결정</span>
-        <span class="rc-graphic__card">프로젝트</span>
+        <span class="rc-graphic__pill rc-graphic__pill--right">임상 의사결정</span>
+        <span class="rc-graphic__card">케어 플랜</span>
         <span class="rc-graphic__pill rc-graphic__pill--left">수평적 소통</span>
       </div>
     </article>
     <article class="rc-feature-card rc-feature-card--green" data-reveal>
       <div class="rc-feature-card__copy">
-        <h3>비즈니스 가치를 담아내는 올인원 개발</h3>
-        <p>홈페이지는 기업의 아이덴티티를 표현해야 하고, 서비스는 방향성과 가치를 함께 담아야 합니다. 브랜드부터 서비스까지의 이해 없이 진행되는 개발은 단편적인 결과물을 만들 수는 있지만, 사업의 핵심 가치를 제대로 전달하기 어렵습니다. 리커너스는 마케팅과 브랜딩, 콘텐츠, 운영까지 함께 이해하고 고려하며, 브랜드의 본질을 담은 서비스를 구현합니다.</p>
+        <h3>환자 경험을 담아내는 올인원 헬스케어 디자인</h3>
+        <p>홈페이지는 의료기관의 신뢰를 표현해야 하고, 서비스는 케어 방향성과 가치를 함께 담아야 합니다. 브랜드부터 진료 경험까지의 이해 없이 진행되는 개발은 단편적인 결과물을 만들 수는 있지만, 케어의 핵심 가치를 제대로 전달하기 어렵습니다. 리커너스는 마케팅과 브랜딩, 환자 콘텐츠, 운영까지 함께 이해하고 고려하며, 브랜드의 본질을 담은 헬스케어 서비스를 구현합니다.</p>
       </div>
       <div class="rc-feature-card__media rc-graphic rc-graphic--branding" aria-hidden="true">
         <span class="rc-graphic__shadow"></span>
         <span class="rc-graphic__ring"></span>
-        <span class="rc-graphic__center">브랜드 본질을 담은<br>결과물</span>
+        <span class="rc-graphic__center">브랜드 본질을 담은<br>케어 경험</span>
         <span class="rc-graphic__satellite rc-graphic__satellite--tl">브랜드<br>아이덴티티</span>
-        <span class="rc-graphic__satellite rc-graphic__satellite--tr">서비스<br>방향성</span>
+        <span class="rc-graphic__satellite rc-graphic__satellite--tr">케어<br>방향성</span>
         <span class="rc-graphic__satellite rc-graphic__satellite--bl">핵심 가치</span>
         <span class="rc-graphic__satellite rc-graphic__satellite--br">운영 방향</span>
       </div>
     </article>
     <article class="rc-feature-card rc-feature-card--navy" data-reveal>
       <div class="rc-feature-card__copy">
-        <h3>안정적이고 강력한 클라우드 인프라 구축</h3>
-        <p>좋은 서비스는 화면만으로 완성되지 않습니다. 속도와 보안, 배포, 확장성, 운영 안정성까지 함께 고려되어야 합니다. 리커너스는 AWS와 ECS 기반의 클라우드 환경을 구축하여 안정적인 성능과 운영 환경을 제공합니다. 기술과 운영을 함께 고려한 설계를 바탕으로, 안정적인 서비스 경험과 지속 가능한 운영을 지원합니다.</p>
+        <h3>안정적이고 강력한 의료 데이터 클라우드 인프라 구축</h3>
+        <p>좋은 헬스케어 서비스는 화면만으로 완성되지 않습니다. 속도와 보안, 개인정보 보호, 확장성, 운영 안정성까지 함께 고려되어야 합니다. 리커너스는 AWS와 ECS 기반의 클라우드 환경을 구축하여 민감한 환자 데이터도 안정적인 성능과 운영 환경으로 지원합니다. 기술과 운영을 함께 고려한 설계를 바탕으로, 안정적인 케어 경험과 지속 가능한 운영을 지원합니다.</p>
       </div>
       <div class="rc-feature-card__media rc-graphic rc-graphic--cloud" aria-hidden="true">
         <span class="rc-graphic__shadow"></span>
@@ -258,17 +258,17 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
 <footer class="rc-footer" id="contact">
   <div class="rc-footer__top">
     <div class="rc-footer__lead">
-      <p class="rc-footer__tag">상상을 기술로 완성하는 파트너, 리커너스</p>
-      <p class="rc-footer__cta">당신의 상상을<br><strong>현실로 만들어보세요</strong></p>
+      <p class="rc-footer__tag">회복을 기술로 완성하는 파트너, 리커너스</p>
+      <p class="rc-footer__cta">당신의 회복을<br><strong>현실로 만들어보세요</strong></p>
     </div>
     <div class="rc-footer__nav">
       <div class="rc-footer__col">
         <span class="rc-footer__col-head">프로젝트</span>
         <ul>
           <li>전체</li>
-          <li>모바일앱</li>
-          <li>반응형 웹사이트</li>
-          <li>브랜딩</li>
+          <li>원격 진료</li>
+          <li>환자 관리 플랫폼</li>
+          <li>재활 케어</li>
         </ul>
       </div>
       <div class="rc-footer__col">
@@ -300,6 +300,8 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+<script src="js/cloud-physics.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

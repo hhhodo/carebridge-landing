@@ -75,7 +75,8 @@ Figma 파일 `BrVaTxFSnaAlv6IT2ZRvhs`, node `184:3` ("MORRIS" 최상위 프레�
 - `index.html` — 시맨틱 마크업, variant/layout 주석 포함
 - `css/styles.css` — 공유 디자인 킷 (불변, 다른 sibling과 100% 동일)
 - `css/site.css` — RECONERS 브랜드 토큰 + 컴포넌트
-- `js/main.js` — 스티키 nav + 스크롤 reveal (캐러셀/자동재생 등 JS 애니메이션 라이브러리 없음)
+- `js/main.js` — 스크롤 reveal (IntersectionObserver)
+- `js/cloud-physics.js` — 쇼케이스 뱃지 낙하/적재 물리 시뮬레이션 (Matter.js)
 - `.github/workflows/deploy.yml` — GitHub Pages 배포 (Actions, noksu-landing과 동일 패턴)
 
 ## 참고
@@ -83,3 +84,22 @@ Figma 파일 `BrVaTxFSnaAlv6IT2ZRvhs`, node `184:3` ("MORRIS" 최상위 프레�
 `get_motion_context` 호출은 생략했습니다 — 레퍼런스의 모션은 `motion/react`의 단순 컨테이너 요소
 등장 정도로, 이미 구현한 CSS `data-reveal` + IntersectionObserver 페이드인으로 동등하게 표현되며
 별도 JS 애니메이션 라이브러리를 추가하지 않는다는 하드 룰에 부합합니다.
+
+## 이후 수정 이력
+
+1. **장식 그래픽 코드 재구현**: 초기 빌드에서 히어로 R 마크/플로팅 라벨, 스테이트먼트 섹션 블롭,
+   기술 섹션 배경, 기능 카드 3종의 원·필 그래픽을 전부 export한 PNG로 그대로 박아 넣었던 것을,
+   실제 생김새를 확인한 뒤 CSS 도형(원/필/그라디언트)과 인라인 SVG로 다시 구현했습니다. 진짜
+   콘텐츠성 이미지(브랜드 로고 6종)만 이미지로 유지했습니다.
+2. **쇼케이스 섹션 정정**: `dashboard-screenshot.png`라는 파일명만 보고 실제 대시보드 스크린샷인
+   줄 알고 이미지로 유지했으나, 열어보니 실제로는 서비스 태그가 회전/중첩된 콜라주 그래픽이었습니다.
+   태그 목록을 그대로 추출해 코드로 재구현했습니다.
+3. **물리 인터랙션 추가**: 쇼케이스의 서비스 뱃지가 위에서 중력에 따라 낙하해 서로 충돌하며 쌓이는
+   인터랙션을 요청받아, Matter.js(CDN, cdnjs)로 실제 강체 물리 시뮬레이션을 돌리고 그 결과를
+   각 뱃지 DOM 엘리먼트의 `transform`에 매 프레임 반영하는 방식(`js/cloud-physics.js`)으로
+   구현했습니다. 캔버스 렌더링 없이 실제 텍스트 DOM을 그대로 움직여 접근성과 폰트 렌더링 품질을
+   유지합니다.
+4. **헬스케어 브랜드 피벗**: 사용자가 전체 콘텐츠를 헬스케어 도메인으로 바꿔달라고 요청해, 레이아웃/
+   그리드/토큰 시스템은 그대로 두고 카피 전체(히어로/스테이트먼트/필/쇼케이스 뱃지/기술 섹션/
+   포트폴리오 7건/기능 카드 3종/푸터)를 원격진료·환자 모니터링·재활 케어 등 헬스케어 서사로
+   재작성했습니다. 브랜드명 "리커너스"는 유지하되 포지셔닝만 디지털 헬스케어 파트너로 전환했습니다.
