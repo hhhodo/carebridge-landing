@@ -124,16 +124,16 @@ body{background:var(--rc-white);}
 
 /* ---------- showcase: 서비스 태그 클라우드 (실측 위치를 흩뿌린 콜라주로 재현) ---------- */
 .rc-showcase{background:var(--rc-navy);padding-block:clamp(40px,7vw,80px);overflow:clip;}
-.rc-cloud{position:relative;width:100%;aspect-ratio:1650/700;}
+.rc-cloud{position:relative;width:100%;aspect-ratio:1650/560;}
 .rc-cloud__tag{position:absolute;transform:translate(-50%,-50%) rotate(var(--r,0deg));
   display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;
-  padding:clamp(6px,.9vw,14px) clamp(12px,1.6vw,26px);border-radius:var(--radius-circle);
-  font-weight:700;font-size:clamp(10px,1.05vw,19px);letter-spacing:-0.01em;
+  padding:clamp(10px,1.3vw,20px) clamp(18px,2.3vw,36px);border-radius:var(--radius-circle);
+  font-weight:700;font-size:clamp(13px,1.5vw,26px);letter-spacing:-0.01em;
   color:rgba(255,255,255,.8);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);}
 .rc-cloud__tag--solid{background:linear-gradient(135deg,#e7e9f2,#c7ccdd);color:var(--rc-navy);border-color:transparent;}
-.rc-cloud__tag--md{font-size:clamp(12px,1.3vw,22px);padding-inline:clamp(16px,2vw,30px);}
-.rc-cloud__tag--lg{font-size:clamp(13px,1.5vw,26px);padding-inline:clamp(20px,2.6vw,40px);}
-.rc-cloud__tag--icon{padding:clamp(6px,.9vw,14px);width:clamp(28px,2.6vw,44px);height:clamp(28px,2.6vw,44px);}
+.rc-cloud__tag--md{font-size:clamp(16px,1.9vw,32px);padding-inline:clamp(24px,3vw,44px);}
+.rc-cloud__tag--lg{font-size:clamp(18px,2.3vw,38px);padding-inline:clamp(30px,3.7vw,56px);}
+.rc-cloud__tag--icon{padding:clamp(10px,1.3vw,20px);width:clamp(38px,3.8vw,62px);height:clamp(38px,3.8vw,62px);}
 
 @media (max-width:700px){
   .rc-cloud{aspect-ratio:auto;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding-block:20px;}
