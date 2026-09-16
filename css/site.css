@@ -159,9 +159,10 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 /* 그라디언트 배경 빼고 남색으로 통일 */
 .rc-tech{position:relative;background:var(--rc-navy);overflow:clip;min-height:100vh;display:flex;flex-direction:column;justify-content:center;}
 .rc-tech__head{position:relative;z-index:1;text-align:center;padding-block:clamp(60px,10vw,140px) clamp(40px,6vw,80px);}
-/* 한 줄로 고정 — vw 기반으로 폰트를 충분히 줄여서 컨테이너 안에서 한 줄에 들어오게 */
+/* 폰트는 다른 섹션 타이틀과 동일한 title 스케일 그대로 유지 — 한 줄에 안 들어오면 폰트를 줄이는 게
+   아니라 문구 자체를 짧게 쓴다 */
 .rc-tech__head h2{color:var(--rc-white);font-weight:var(--fw-strong);
-  font-size:clamp(12px,2vw,32px);line-height:1.4;letter-spacing:-0.02em;
+  font-size:clamp(28px,4.2vw,var(--rc-fs-title));line-height:1.4;letter-spacing:-0.02em;
   white-space:nowrap;margin-inline:auto;padding-inline:20px;}
 .rc-tech__head h2 .accent{color:var(--rc-blue-light);}
 .rc-tech__row{position:relative;z-index:1;display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(20px,2.4vw,40px);
