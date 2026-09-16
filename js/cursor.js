@@ -1,23 +1,18 @@
-/* 노란 원 커스텀 커서 + 히어로 뱃지가 커서에 닿으면 살짝 밀려나는 인터랙션.
-   포인터가 있는 기기(마우스)에서만 동작한다. */
+/* 히어로 뱃지가 마우스 근처에 오면 살짝 밀려나는 인터랙션.
+   기본 시스템 커서는 그대로 두고(숨기지 않음), 뱃지 반응만 남긴다 —
+   이전에 커스텀 커서 점(dot)을 그리던 방식이 마우스 자체를 안 보이게 만드는
+   문제가 있어 제거했다. */
 (() => {
   if (!window.matchMedia('(pointer:fine)').matches) return;
 
-  const dot = document.createElement('div');
-  dot.id = 'rc-cursor-dot';
-  dot.setAttribute('aria-hidden', 'true');
-  document.body.appendChild(dot);
-
   const chips = Array.from(document.querySelectorAll('.rc-chip'));
+  if (!chips.length) return;
+
   const REACH = 140;
   const PUSH = 36;
-
   let raf = null;
 
   function update(x, y) {
-    dot.style.left = `${x}px`;
-    dot.style.top = `${y}px`;
-
     chips.forEach((chip) => {
       const r = chip.getBoundingClientRect();
       const cx = r.left + r.width / 2;

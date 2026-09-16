@@ -19,9 +19,9 @@ Hero        → navy, CODED decorative R-mark + floating labels (no raster bg) �
 Statement   → white bg (측정: 배경 navy 아님, 장식 도형만 navy) → 좌측 정렬 카피, CSS 블롭 장식 (컨테이너 1680)
 Mid stmt    → navy → centered headline
 Pills       → navy → 좌측 정렬 2행 (3 solid + 2 outline, 측정 88px)
-Showcase    → navy → 서비스 뱃지가 위에서 낙하해 쌓이는 물리 인터랙션 (Matter.js, js/cloud-physics.js)
-Tech        → navy + CSS 그라디언트 메시 배경 → 헤딩(Nore Framework 포함) + 실제 로고 이미지 행 (375x492 측정)
-Portfolio   → navy → 헤딩/서브카피 + static horizontal row (NOT a carousel), 정사각/원형 교차 634px 측정
+Showcase    → navy → 서비스 뱃지가 위에서 낙하해 쌓이는 물리 인터랙션 (Matter.js, js/cloud-physics.js), 800px 고정
+Tech        → navy → 타이틀+보안카드 5장이 같이 고정(sticky), 스크롤에 맞춰 타로카드처럼 펼쳐짐 (js/card-scroll.js)
+Portfolio   → 요청에 따라 섹션 전체 제거됨
 Features    → white → 3 stacked cards (측정 1696-1816), navy/green/navy, 그래픽은 CSS 원/필/SVG로 코드 구현 (래스터 아님)
 Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, 회사소개서/인스타그램 버튼 제거)
 -->
@@ -184,51 +184,6 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
         </article>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Portfolio — static row, no carousel/arrows -->
-<section class="rc-portfolio">
-  <div class="rc-portfolio__head" data-reveal>
-    <h2>탄탄한 케어 설계 위에서<br>완성한 헬스케어 프로젝트</h2>
-    <p>단순히 화면을 빠르게 만드는 것이 아닌 진료와 회복,<br>돌봄까지 이어질 수 있는 케어 구조를 설계합니다.</p>
-  </div>
-  <div class="rc-portfolio__row" id="portfolioRow">
-    <article class="rc-portfolio__item" data-reveal>
-      <div class="rc-portfolio__media"></div>
-      <h3>뷰노</h3>
-      <p>의료 AI 영상판독 솔루션 반응형 홈페이지</p>
-    </article>
-    <article class="rc-portfolio__item rc-portfolio__item--circle" data-reveal>
-      <div class="rc-portfolio__media"></div>
-      <h3>케어링크</h3>
-      <p>퇴원 후 재택 모니터링 플랫폼</p>
-    </article>
-    <article class="rc-portfolio__item" data-reveal>
-      <div class="rc-portfolio__media"></div>
-      <h3>세인트루카스재활센터</h3>
-      <p>재활 치료 예약 반응형 홈페이지</p>
-    </article>
-    <article class="rc-portfolio__item rc-portfolio__item--circle" data-reveal>
-      <div class="rc-portfolio__media"></div>
-      <h3>닥터히어로</h3>
-      <p>비대면 진료 모바일 어플리케이션</p>
-    </article>
-    <article class="rc-portfolio__item" data-reveal>
-      <div class="rc-portfolio__media"></div>
-      <h3>서울포레스트</h3>
-      <p>정신건강의학과의원 반응형 홈페이지</p>
-    </article>
-    <article class="rc-portfolio__item rc-portfolio__item--circle" data-reveal>
-      <div class="rc-portfolio__media"></div>
-      <h3>메디케어링</h3>
-      <p>만성질환 복약관리 플랫폼</p>
-    </article>
-    <article class="rc-portfolio__item" data-reveal>
-      <div class="rc-portfolio__media"></div>
-      <h3>웰니스포유</h3>
-      <p>시니어 헬스케어 브랜딩</p>
-    </article>
   </div>
 </section>
 
