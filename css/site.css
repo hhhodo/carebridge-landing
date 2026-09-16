@@ -207,11 +207,13 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 .rc-portfolio__bg{position:absolute;inset:0;z-index:0;}
 .rc-portfolio__bg img{width:100%;height:100%;object-fit:cover;}
 .rc-portfolio__head,.rc-portfolio__row{position:relative;z-index:1;}
-.rc-portfolio__head{max-width:640px;padding-inline:clamp(20px,8vw,160px);margin-bottom:clamp(32px,5vw,64px);}
-.rc-portfolio__head h2{color:var(--rc-navy);font-weight:var(--rc-fw-light);font-size:clamp(22px,2.6vw,var(--rc-fs-sub));line-height:1.4;letter-spacing:-0.02em;margin-bottom:12px;}
-.rc-portfolio__head p{color:rgba(7,20,56,.6);font-size:clamp(16px,1.5vw,var(--rc-fs-body));line-height:1.6;}
+/* max-width가 padding-inline까지 포함(border-box)해서 실제 텍스트 폭이 너무 좁아 4줄로 깨졌던 문제 —
+   넉넉하게 넓히고, 섹션 타이틀답게 굵기도 title급으로 */
+.rc-portfolio__head{max-width:920px;padding-inline:clamp(20px,8vw,160px);margin-bottom:clamp(40px,6vw,72px);}
+.rc-portfolio__head h2{color:var(--rc-navy);font-weight:var(--fw-strong);font-size:clamp(24px,3.2vw,44px);line-height:1.35;letter-spacing:-0.02em;margin-bottom:14px;}
+.rc-portfolio__head p{color:rgba(7,20,56,.6);font-weight:var(--rc-fw-light);font-size:clamp(16px,1.5vw,var(--rc-fs-body));line-height:1.6;}
 .rc-portfolio__row{display:flex;align-items:flex-start;gap:clamp(16px,2.5vw,32px);overflow-x:auto;padding-inline:clamp(20px,8vw,160px);
-  padding-bottom:8px;scroll-snap-type:x proximity;scrollbar-width:none;}
+  padding-top:8px;padding-bottom:8px;scroll-snap-type:x proximity;scrollbar-width:none;}
 .rc-portfolio__row::-webkit-scrollbar{display:none;}
 .rc-portfolio__item{flex:0 0 clamp(240px,33vw,636px);scroll-snap-align:start;display:flex;flex-direction:column;gap:24px;}
 .rc-portfolio__media{width:100%;aspect-ratio:1/1;border-radius:20px;background:var(--rc-placeholder-video);}
