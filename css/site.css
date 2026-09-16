@@ -76,9 +76,12 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 .rc-chip:nth-of-type(4n){animation-delay:-3.3s;}
 .rc-chip--fade{opacity:.3;}
 .rc-chip--dark{background:rgba(255,255,255,.08);color:#fff;}
-/* 글래스 라인 뱃지: 반투명 유리 느낌 + 흰 텍스트 */
-.rc-chip--glass{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.45);
-  backdrop-filter:blur(6px);}
+/* "Recovery" 뱃지: pills 섹션의 .rc-pill--outline과 동일한 디자인(네이비 배경 + 그라디언트 테두리)으로 통일 */
+.rc-chip--glass{color:#fff;background:var(--rc-navy);
+  border:2px solid transparent;
+  background-image:linear-gradient(var(--rc-navy),var(--rc-navy)),
+    linear-gradient(90deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.55) 35%,rgba(255,255,255,.45) 65%,rgba(255,255,255,.8) 100%);
+  background-origin:border-box;background-clip:padding-box,border-box;}
 @media (prefers-reduced-motion:reduce){
   .rc-chip{animation:none;}
 }
@@ -106,6 +109,9 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
   font-size:22px;font-weight:var(--rc-fw-light);border-radius:50%;}
 .rc-blob--glow{right:-6%;bottom:-16%;width:min(34vw,420px);aspect-ratio:1/1;
   background:radial-gradient(circle,rgba(120,140,220,.22) 0%,rgba(120,140,220,0) 70%);}
+/* 타이틀이 화면 전체(흰 격자 배경 포함)를 채우도록 고정 — 200vh 스크롤 구간 동안 스크롤에 맞춰 글자가 채워짐 */
+.rc-statement__titlepin{position:relative;height:200vh;}
+.rc-statement__titleinner{position:sticky;top:0;min-height:100vh;display:flex;align-items:center;z-index:1;}
 .rc-statement__inner{position:relative;z-index:1;display:flex;flex-direction:column;gap:clamp(48px,8vw,160px);}
 .rc-statement h2{color:var(--rc-navy-muted);font-weight:var(--fw-strong);
   font-size:clamp(30px,4.2vw,var(--rc-fs-title));line-height:1.4;letter-spacing:-0.02em;}
@@ -113,6 +119,11 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 .rc-statement__body p{color:rgba(17,17,17,.55);font-weight:var(--rc-fw-light);
   font-size:clamp(20px,2vw,var(--rc-fs-body));line-height:1.4;letter-spacing:-0.02em;}
 .rc-statement__body p .accent{color:var(--rc-blue);}
+
+/* 스크롤에 따라 한 글자씩 채워지는 타이틀 (js/char-reveal.js) */
+.rc-word{white-space:nowrap;}
+.rc-char{opacity:.15;transition:opacity .05s linear;}
+.rc-char.is-filled{opacity:1;}
 
 /* ---------- mid statement (그래서 케어브릿지는...) ---------- */
 .rc-mid{background:var(--rc-navy);color:var(--rc-white);min-height:60vh;display:flex;align-items:center;justify-content:center;padding-block:clamp(80px,10vw,160px);text-align:center;}
