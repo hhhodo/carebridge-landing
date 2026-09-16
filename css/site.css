@@ -240,9 +240,10 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 .rc-features__sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden;}
 .rc-features__stack{position:relative;width:100%;height:100%;}
 /* 카드마다 --reveal(0~1)에 따라 오른쪽에서 슬라이드, 뒤 카드일수록 z-index가 높아 위로 겹침 */
-.rc-feature-card{position:absolute;top:50%;left:0;width:100%;
+/* 카드마다 내용 길이가 달라 auto 높이로 두면 크기가 제각각이었음 — 셋 다 같은 높이로 고정 */
+.rc-feature-card{position:absolute;top:50%;left:0;width:100%;height:clamp(480px,46vw,680px);
   border-radius:20px;padding:clamp(24px,4.3vw,80px);display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);
-  align-items:center;justify-content:space-between;color:var(--rc-white);
+  align-items:center;justify-content:space-between;color:var(--rc-white);overflow:hidden;
   --reveal:0;z-index:calc(var(--stack-i,1));
   box-shadow:0 24px 48px rgba(0,0,0,.18);
   opacity:var(--reveal);
