@@ -65,20 +65,20 @@ body{background:var(--rc-white);}
 .rc-hero__mark{position:absolute;left:50%;top:9%;width:min(11vw,140px);transform:translateX(-50%);filter:drop-shadow(0 8px 24px rgba(0,0,0,.25));}
 .rc-chip{position:absolute;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;
   padding:clamp(10px,1.1vw,16px) clamp(16px,1.8vw,26px);border-radius:var(--radius-circle);
-  font-weight:700;font-size:clamp(13px,1.15vw,20px);color:var(--rc-navy);
+  font-weight:var(--fw-strong);font-size:clamp(13px,1.15vw,20px);color:var(--rc-navy);
   background:linear-gradient(135deg,#fff,#dfe3ef);}
 .rc-chip--fade{opacity:.3;}
 .rc-chip--teal{background:linear-gradient(135deg,#cfe9e4,#9fc9c2);}
 .rc-chip--lav{background:linear-gradient(135deg,#e6d9ee,#c9b3d8);}
-.rc-chip--dark{background:rgba(255,255,255,.08);color:#fff;font-weight:600;}
+.rc-chip--dark{background:rgba(255,255,255,.08);color:#fff;font-weight:var(--fw-strong);}
 .rc-hero__content{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;gap:clamp(24px,4vw,60px);
   padding-block:clamp(40px,6vw,88px);flex-wrap:wrap;}
 .rc-hero__copy{color:var(--rc-white);display:flex;flex-direction:column;gap:12px;max-width:56ch;}
-.rc-hero__sub{font-weight:500;font-size:clamp(22px,2.5vw,var(--rc-fs-hero-sub));line-height:1.3;letter-spacing:-0.02em;}
+.rc-hero__sub{font-weight:var(--fw-base);font-size:clamp(22px,2.5vw,var(--rc-fs-hero-sub));line-height:1.3;letter-spacing:-0.02em;}
 .rc-hero__sub .accent{color:var(--rc-yellow);}
 .rc-hero__h1{font-weight:var(--fw-strong);font-size:clamp(34px,5.2vw,var(--rc-fs-hero-h1));line-height:1.2;letter-spacing:-0.02em;}
 .rc-hero__side{color:var(--rc-white);display:flex;gap:28px;align-items:flex-start;max-width:34ch;}
-.rc-hero__side p{font-weight:500;font-size:clamp(16px,1.45vw,var(--rc-fs-hero-side));line-height:1.5;letter-spacing:-0.02em;}
+.rc-hero__side p{font-weight:var(--fw-base);font-size:clamp(16px,1.45vw,var(--rc-fs-hero-side));line-height:1.5;letter-spacing:-0.02em;}
 
 /* ---------- statement (흰 배경 + 은은한 그라디언트 장식) ---------- */
 .rc-statement{position:relative;background:var(--rc-white);overflow:clip;padding-block:clamp(80px,14vw,240px) clamp(120px,18vw,240px);
@@ -92,7 +92,7 @@ body{background:var(--rc-white);}
   background:linear-gradient(90deg,#2fa8ff 0%,#5b4de0 55%,#c93bd6 100%);}
 .rc-blob--plus{right:24%;top:28%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;
   background:rgba(255,255,255,.8);box-shadow:0 8px 24px rgba(56,71,115,.15);color:var(--rc-navy-muted);
-  font-size:22px;font-weight:600;border-radius:50%;}
+  font-size:22px;font-weight:var(--fw-strong);border-radius:50%;}
 .rc-blob--glow{right:-6%;bottom:-16%;width:min(34vw,420px);aspect-ratio:1/1;
   background:radial-gradient(circle,rgba(120,140,220,.22) 0%,rgba(120,140,220,0) 70%);}
 .rc-statement__inner{position:relative;z-index:1;display:flex;flex-direction:column;gap:clamp(48px,8vw,160px);}
@@ -114,7 +114,7 @@ body{background:var(--rc-white);}
 .rc-pills__row{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-start;}
 .rc-pill{display:inline-flex;align-items:center;justify-content:center;
   padding:clamp(10px,1.2vw,24px) clamp(20px,2.5vw,48px);border-radius:var(--radius-circle);
-  font-weight:600;font-size:clamp(24px,4.2vw,var(--rc-fs-pill));letter-spacing:-0.02em;line-height:1.2;white-space:nowrap;}
+  font-weight:var(--fw-strong);font-size:clamp(24px,4.2vw,var(--rc-fs-pill));letter-spacing:-0.02em;line-height:1.2;white-space:nowrap;}
 .rc-pill--light{background:var(--rc-white);color:var(--rc-navy);}
 .rc-pill--outline{color:var(--rc-white);background:var(--rc-navy);
   border:2px solid transparent;
@@ -122,19 +122,19 @@ body{background:var(--rc-white);}
     linear-gradient(90deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.55) 35%,rgba(255,255,255,.45) 65%,rgba(255,255,255,.8) 100%);
   background-origin:border-box;background-clip:padding-box,border-box;}
 
-/* ---------- showcase: 뱃지가 중력으로 떨어져 쌓이는 물리 인터랙션 (js/cloud-physics.js) ---------- */
+/* ---------- showcase: 뱃지가 중력으로 떨어져 쌓이는 물리 인터랙션 (js/cloud-physics.js) ----------
+   치트시트 .badge 토큰(--fs-badge, --space-*, --radius-circle) 기준으로 전 뱃지 동일 크기 통일 */
 .rc-showcase{background:var(--rc-navy);padding-block:clamp(40px,7vw,80px);overflow:clip;}
 .rc-cloud{position:relative;width:100%;height:clamp(360px,38vw,600px);overflow:hidden;}
 .rc-cloud__tag{position:absolute;left:0;top:0;will-change:transform;opacity:0;transition:opacity .25s ease;
   display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;
-  padding:clamp(10px,1.3vw,20px) clamp(18px,2.3vw,36px);border-radius:var(--radius-circle);
-  font-weight:700;font-size:clamp(13px,1.5vw,26px);letter-spacing:-0.01em;
+  padding:var(--space-3) var(--space-5);border-radius:var(--radius-circle);
+  font-weight:var(--fw-strong);font-size:var(--fs-badge);letter-spacing:0;
   color:rgba(255,255,255,.8);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);}
 .rc-cloud__tag.is-ready{opacity:1;}
 .rc-cloud__tag--solid{background:linear-gradient(135deg,#e7e9f2,#c7ccdd);color:var(--rc-navy);border-color:transparent;}
-.rc-cloud__tag--md{font-size:clamp(16px,1.9vw,32px);padding-inline:clamp(24px,3vw,44px);}
-.rc-cloud__tag--lg{font-size:clamp(18px,2.3vw,38px);padding-inline:clamp(30px,3.7vw,56px);}
-.rc-cloud__tag--icon{padding:clamp(10px,1.3vw,20px);width:clamp(38px,3.8vw,62px);height:clamp(38px,3.8vw,62px);}
+.rc-cloud__tag--icon{padding:var(--space-3);width:calc(var(--fs-badge) + var(--space-3) * 2 + 4px);
+  height:calc(var(--fs-badge) + var(--space-3) * 2 + 4px);}
 
 /* ---------- tech stack ---------- */
 .rc-tech{position:relative;background:var(--rc-navy);overflow:clip;}
@@ -180,7 +180,7 @@ body{background:var(--rc-white);}
 .rc-feature-card--green{background:var(--rc-green);}
 .rc-feature-card__copy{display:flex;flex-direction:column;gap:clamp(20px,3vw,48px);flex:1 1 420px;max-width:56ch;}
 .rc-feature-card__copy h3{font-weight:var(--fw-strong);font-size:clamp(24px,3vw,var(--rc-fs-feature-h));line-height:1.3;letter-spacing:-0.02em;}
-.rc-feature-card__copy p{font-weight:500;font-size:clamp(16px,1.3vw,var(--rc-fs-feature-body));line-height:1.8;letter-spacing:-0.02em;}
+.rc-feature-card__copy p{font-weight:var(--fw-base);font-size:clamp(16px,1.3vw,var(--rc-fs-feature-body));line-height:1.8;letter-spacing:-0.02em;}
 .rc-feature-card__media{flex:0 1 340px;max-width:400px;}
 
 /* ---------- feature graphics — coded shapes, no raster images ---------- */
@@ -188,7 +188,7 @@ body{background:var(--rc-white);}
 .rc-graphic__shadow{position:absolute;left:8%;right:8%;bottom:-4%;height:14%;border-radius:50%;
   background:radial-gradient(ellipse,rgba(0,0,0,.35) 0%,transparent 72%);filter:blur(4px);}
 .rc-graphic span{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;
-  font-weight:700;color:#fff;line-height:1.25;}
+  font-weight:var(--fw-strong);color:#fff;line-height:1.25;}
 
 /* Notion 카드: 원/필/카드 조합 */
 .rc-graphic--notion .rc-graphic__circle{width:42%;aspect-ratio:1/1;border-radius:50%;left:6%;top:6%;
@@ -229,11 +229,11 @@ body{background:var(--rc-white);}
   display:flex;flex-wrap:wrap;gap:clamp(32px,4vw,48px);justify-content:space-between;}
 .rc-footer__lead{display:flex;flex-direction:column;gap:24px;max-width:809px;}
 .rc-footer__tag{font-weight:var(--fw-strong);font-size:var(--rc-fs-footer-lead);}
-.rc-footer__cta{font-weight:500;font-size:clamp(32px,6vw,var(--rc-fs-footer-cta));line-height:1.2;letter-spacing:-0.02em;}
+.rc-footer__cta{font-weight:var(--fw-base);font-size:clamp(32px,6vw,var(--rc-fs-footer-cta));line-height:1.2;letter-spacing:-0.02em;}
 .rc-footer__cta strong{font-weight:var(--fw-strong);}
 .rc-footer__nav{display:flex;flex-wrap:wrap;gap:clamp(24px,3vw,32px);}
 .rc-footer__col{display:flex;flex-direction:column;gap:clamp(20px,2.5vw,40px);min-width:140px;}
-.rc-footer__col-head{font-weight:600;font-size:var(--rc-fs-footer-nav);letter-spacing:-0.02em;}
+.rc-footer__col-head{font-weight:var(--fw-strong);font-size:var(--rc-fs-footer-nav);letter-spacing:-0.02em;}
 .rc-footer__col ul{display:flex;flex-direction:column;gap:clamp(12px,1.5vw,24px);font-size:var(--rc-fs-footer-list);letter-spacing:-0.02em;}
 .rc-footer__col ul li{opacity:.9;}
 .rc-footer__bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;padding-top:clamp(40px,4vw,80px);}

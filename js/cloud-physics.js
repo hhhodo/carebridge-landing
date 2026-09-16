@@ -34,7 +34,8 @@
 
       const startX = Math.random() * Math.max(width - w, w) + w / 2;
       const startY = -(120 + Math.random() * 500 + i * 60);
-      const startAngle = (Math.random() - 0.5) * 0.5;
+      // 아주 살짝만 기울이고(±8도) 고정 — 텍스트가 뒤집히거나 거꾸로 읽히는 일이 없도록
+      const startAngle = (Math.random() - 0.5) * 0.28;
 
       const body = Bodies.rectangle(startX, startY, w, h, {
         restitution: 0.32,
@@ -44,7 +45,10 @@
         chamfer: { radius: Math.min(h / 2, 24) },
         angle: startAngle,
       });
-      Body.setAngularVelocity(body, (Math.random() - 0.5) * 0.15);
+      // 회전 관성을 무한대로 고정 — 낙하/충돌/쌓임은 실제 물리 그대로 계산하되
+      // 텍스트가 회전(특히 뒤집힘)하지 않도록 각속도에는 영향받지 않게 한다.
+      Body.setInertia(body, Infinity);
+      Body.setAngularVelocity(body, 0);
       World.add(world, body);
       el.classList.add('is-ready');
 
