@@ -164,7 +164,8 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 .rc-tech__head{position:relative;z-index:1;text-align:center;padding-block:clamp(60px,10vw,140px) clamp(40px,6vw,80px);}
 /* 배경이 밝은 파스텔 그라디언트라 네이비 텍스트로 대비 확보 */
 .rc-tech__head h2{color:var(--rc-navy);font-weight:var(--fw-strong);
-  font-size:clamp(26px,4.2vw,var(--rc-fs-title));line-height:1.4;letter-spacing:-0.02em;max-width:38ch;margin-inline:auto;}
+  font-size:clamp(15px,2.4vw,var(--rc-fs-title));line-height:1.4;letter-spacing:-0.02em;margin-inline:auto;
+  white-space:nowrap;}
 .rc-tech__head h2 .accent{color:var(--rc-blue);}
 .rc-tech__row{position:relative;z-index:1;display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(20px,2.4vw,40px);
   padding:0 clamp(20px,8vw,160px) clamp(60px,10vw,140px);}
@@ -186,8 +187,9 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
     #aeb2bd 0%,#d6d9e0 10%,#f5f6f9 22%,#ffffff 32%,
     #e2e5ec 42%,#c3c7d1 52%,#eef0f4 64%,#ffffff 74%,
     #d8dbe2 86%,#b6bac4 100%);}
-.rc-tech__card-face{position:relative;width:100%;height:100%;border-radius:20px;background:var(--rc-white);
-  box-shadow:0 16px 32px rgba(0,0,0,.12);
+.rc-tech__card-face{position:relative;width:100%;height:100%;border-radius:30px;
+  background:linear-gradient(180deg,#ffffff 82.075%,#eaeaea 99.736%);
+  box-shadow:0 16px 32px rgba(0,0,0,.12),inset 0 0 20px rgba(182,182,182,.25);
   display:flex;flex-direction:column;align-items:center;
   padding:clamp(18px,2.2vw,28px) clamp(16px,1.8vw,24px) clamp(26px,3.2vw,36px);}
 .rc-tech__card:nth-child(1){transition-delay:0s;}
