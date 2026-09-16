@@ -187,7 +187,7 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
     #e2e5ec 42%,#c3c7d1 52%,#eef0f4 64%,#ffffff 74%,
     #d8dbe2 86%,#b6bac4 100%);}
 .rc-tech__card-face{position:relative;width:100%;height:100%;border-radius:30px;
-  background:linear-gradient(180deg,#ffffff 82.075%,#eaeaea 99.736%);
+  background:linear-gradient(180.39deg,#ffffff 82.075%,#eaeaea 99.736%);
   box-shadow:0 16px 32px rgba(0,0,0,.12),inset 0 0 20px rgba(182,182,182,.25);
   display:flex;flex-direction:column;align-items:center;
   padding:clamp(18px,2.2vw,28px) clamp(16px,1.8vw,24px) clamp(26px,3.2vw,36px);}
