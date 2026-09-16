@@ -30,15 +30,17 @@
 
 body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 
-/* ---------- GNB — 고정 상단 내비게이션 ---------- */
+/* ---------- GNB — 고정 상단 내비게이션 ----------
+   배경색 없음 — 대신 mix-blend-mode:difference로 텍스트가 스크롤에 따라 밑에 깔린 섹션
+   색상과 자동으로 반전 대비를 이루게 처리 (흰 배경 위에선 어둡게, 남색 배경 위에선 밝게) */
 .rc-gnb{position:fixed;top:0;left:0;width:100%;z-index:1000;
   display:flex;align-items:center;justify-content:space-between;
   padding:clamp(16px,2vw,24px) clamp(20px,4vw,60px);
-  background:rgba(7,20,56,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  border-bottom:1px solid rgba(255,255,255,.08);}
-.rc-gnb__logo{color:var(--rc-white);font-weight:var(--fw-strong);font-size:clamp(16px,1.4vw,20px);letter-spacing:-0.02em;}
+  pointer-events:none;}
+.rc-gnb__logo,.rc-gnb__nav a{pointer-events:auto;color:#fff;mix-blend-mode:difference;}
+.rc-gnb__logo{font-weight:var(--fw-strong);font-size:clamp(24px,2.2vw,32px);letter-spacing:-0.02em;}
 .rc-gnb__nav{display:flex;align-items:center;gap:clamp(20px,2.6vw,40px);}
-.rc-gnb__nav a{color:rgba(255,255,255,.85);font-weight:var(--rc-fw-light);font-size:clamp(14px,1.05vw,16px);
+.rc-gnb__nav a{font-weight:var(--rc-fw-light);font-size:18px;
   letter-spacing:-0.01em;transition:opacity .15s ease;}
 .rc-gnb__nav a:hover{opacity:.7;}
 @media (max-width:560px){
