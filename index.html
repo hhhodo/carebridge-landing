@@ -22,7 +22,7 @@ Pills       → navy → 좌측 정렬 2행 (3 solid + 2 outline, 측정 88px)
 Showcase    → navy → 서비스 뱃지가 위에서 낙하해 쌓이는 물리 인터랙션 (Matter.js, js/cloud-physics.js), 800px 고정
 Tech        → navy → 타이틀+보안카드 5장이 같이 고정(sticky), 스크롤에 맞춰 타로카드처럼 펼쳐짐 (js/card-scroll.js)
 Portfolio   → 요청에 따라 섹션 전체 제거됨
-Features    → white → 3 stacked cards (측정 1696-1816), navy/green/navy, 그래픽은 CSS 원/필/SVG로 코드 구현 (래스터 아님)
+Features    → white → 카드 3장 같은 자리 고정, 스크롤에 맞춰 우->좌로 한 장씩 겹쳐 날아옴 (js/features-scroll.js), navy/green/navy, 그래픽은 CSS 원/필/SVG로 코드 구현 (래스터 아님)
 Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, 회사소개서/인스타그램 버튼 제거)
 -->
 <!DOCTYPE html>
@@ -199,8 +199,10 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
 
 <!-- Feature cards -->
 <section class="rc-features" data-gnb-theme="light">
-  <div class="container--rc-lg rc-features__stack">
-    <article class="rc-feature-card rc-feature-card--navy" data-reveal>
+  <div class="rc-features__pin">
+   <div class="rc-features__sticky">
+    <div class="container--rc-lg rc-features__stack" id="featuresStack">
+    <article class="rc-feature-card rc-feature-card--navy">
       <div class="rc-feature-card__copy">
         <h3>체계적인 케어 프로젝트 관리와 수평적 협업</h3>
         <p>케어브릿지의 케어 프로젝트는 Notion을 통해 체계적으로 관리합니다. 진료 기록과 의사결정, 케어 플랜 변경 요청을 기록하여 회복 여정의 흐름을 명확하게 유지합니다. 프로젝트에 소요되는 시간은 분 단위로 관리되며, 정확한 환자 데이터 파악을 바탕으로 효율적인 케어 퍼포먼스를 만들어내며 수평적인 소통 문화는 다양한 임상 아이디어를 이끌어내고, 케어 결과물의 완성도를 높이는 기반이 됩니다.</p>
@@ -213,7 +215,7 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
         <span class="rc-graphic__pill rc-graphic__pill--left">수평적 소통</span>
       </div>
     </article>
-    <article class="rc-feature-card rc-feature-card--green" data-reveal>
+    <article class="rc-feature-card rc-feature-card--green">
       <div class="rc-feature-card__copy">
         <h3>환자 경험을 담아내는 올인원 헬스케어 디자인</h3>
         <p>홈페이지는 의료기관의 신뢰를 표현해야 하고, 서비스는 케어 방향성과 가치를 함께 담아야 합니다. 브랜드부터 진료 경험까지의 이해 없이 진행되는 개발은 단편적인 결과물을 만들 수는 있지만, 케어의 핵심 가치를 제대로 전달하기 어렵습니다. 케어브릿지는 마케팅과 브랜딩, 환자 콘텐츠, 운영까지 함께 이해하고 고려하며, 브랜드의 본질을 담은 헬스케어 서비스를 구현합니다.</p>
@@ -228,7 +230,7 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
         <span class="rc-graphic__satellite rc-graphic__satellite--br">운영 방향</span>
       </div>
     </article>
-    <article class="rc-feature-card rc-feature-card--navy" data-reveal>
+    <article class="rc-feature-card rc-feature-card--navy">
       <div class="rc-feature-card__copy">
         <h3>안정적이고 강력한 의료 데이터 클라우드 인프라 구축</h3>
         <p>좋은 헬스케어 서비스는 화면만으로 완성되지 않습니다. 속도와 보안, 개인정보 보호, 확장성, 운영 안정성까지 함께 고려되어야 합니다. 케어브릿지는 AWS와 ECS 기반의 클라우드 환경을 구축하여 민감한 환자 데이터도 안정적인 성능과 운영 환경으로 지원합니다. 기술과 운영을 함께 고려한 설계를 바탕으로, 안정적인 케어 경험과 지속 가능한 운영을 지원합니다.</p>
@@ -249,6 +251,8 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
         </svg>
       </div>
     </article>
+    </div>
+   </div>
   </div>
 </section>
 
@@ -284,6 +288,7 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
 <script src="js/char-reveal.js"></script>
 <script src="js/card-scroll.js"></script>
 <script src="js/gnb-theme.js"></script>
+<script src="js/features-scroll.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
