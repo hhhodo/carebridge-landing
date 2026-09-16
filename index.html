@@ -19,7 +19,7 @@ Hero        → navy, CODED decorative R-mark + floating labels (no raster bg) �
 Statement   → white bg (측정: 배경 navy 아님, 장식 도형만 navy) → 좌측 정렬 카피, CSS 블롭 장식 (컨테이너 1680)
 Mid stmt    → navy → centered headline
 Pills       → navy → 좌측 정렬 2행 (3 solid + 2 outline, 측정 88px)
-Showcase    → navy → single screenshot image (실제 스크린샷이라 이미지 유지)
+Showcase    → navy → 서비스 태그 클라우드 (실제로는 스크린샷이 아니라 회전된 필 태그 모음이었음 — CSS로 재구현)
 Tech        → navy + CSS 그라디언트 메시 배경 → 헤딩(Nore Framework 포함) + 실제 로고 이미지 행 (375x492 측정)
 Portfolio   → navy → 헤딩/서브카피 + static horizontal row (NOT a carousel), 정사각/원형 교차 634px 측정
 Features    → white → 3 stacked cards (측정 1696-1816), navy/green/navy, 그래픽은 CSS 원/필/SVG로 코드 구현 (래스터 아님)
@@ -108,10 +108,31 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
   </div>
 </section>
 
-<!-- Showcase — single screenshot -->
+<!-- Showcase — 서비스 태그 클라우드 (원본은 이미지였으나 CSS 필 태그로 코드 구현) -->
 <section class="rc-showcase">
-  <div class="container--rc-lg">
-    <img src="assets/images/dashboard-screenshot.png" alt="리커너스가 구축한 서비스 대시보드 화면" loading="lazy">
+  <div class="container--rc-lg rc-cloud" data-reveal aria-label="리커너스가 제공하는 서비스 목록">
+    <span class="rc-cloud__tag rc-cloud__tag--solid">일러스트</span>
+    <span class="rc-cloud__tag rc-cloud__tag--emphasis">프로그램 개발</span>
+    <span class="rc-cloud__tag rc-cloud__tag--emphasis rc-cloud__tag--lg">브랜드 아이덴티티 구축</span>
+    <span class="rc-cloud__tag rc-cloud__tag--emphasis rc-cloud__tag--vert">컨텐츠 기획·디자인</span>
+    <span class="rc-cloud__tag">반응형웹</span>
+    <span class="rc-cloud__tag">퍼블리싱</span>
+    <span class="rc-cloud__tag">로고</span>
+    <span class="rc-cloud__tag">React</span>
+    <span class="rc-cloud__tag rc-cloud__tag--emphasis">UX/UI 기획·디자인</span>
+    <span class="rc-cloud__tag">모션그래픽</span>
+    <span class="rc-cloud__tag">디지털 컨텐츠</span>
+    <span class="rc-cloud__tag rc-cloud__tag--icon">&amp;</span>
+    <span class="rc-cloud__tag">패키지</span>
+    <span class="rc-cloud__tag">하이브리드 앱</span>
+    <span class="rc-cloud__tag">아이덴티티가이드북</span>
+    <span class="rc-cloud__tag">포스터 및 브로슈어</span>
+    <span class="rc-cloud__tag">브랜드 베이직 시스템</span>
+    <span class="rc-cloud__tag">영상</span>
+    <span class="rc-cloud__tag">브랜드 홈페이지</span>
+    <span class="rc-cloud__tag">앱솔루션</span>
+    <span class="rc-cloud__tag">Node</span>
+    <span class="rc-cloud__tag rc-cloud__tag--icon">&amp;</span>
   </div>
 </section>
 

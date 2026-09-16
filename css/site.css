@@ -122,9 +122,20 @@ body{background:var(--rc-white);}
     linear-gradient(90deg,rgba(255,255,255,.9) 0%,rgba(255,255,255,.55) 35%,rgba(255,255,255,.45) 65%,rgba(255,255,255,.8) 100%);
   background-origin:border-box;background-clip:padding-box,border-box;}
 
-/* ---------- screenshot showcase ---------- */
-.rc-showcase{background:var(--rc-navy);padding-block:clamp(60px,10vw,120px) 0;overflow:clip;}
-.rc-showcase img{width:100%;height:auto;object-fit:cover;object-position:bottom;border-radius:20px 20px 0 0;}
+/* ---------- showcase: 서비스 태그 클라우드 (코드로 구현, 래스터 이미지 아님) ---------- */
+.rc-showcase{background:var(--rc-navy);padding-block:clamp(40px,7vw,80px);overflow:clip;}
+.rc-cloud{display:flex;flex-wrap:wrap;gap:clamp(8px,1.2vw,16px);align-items:center;justify-content:center;}
+.rc-cloud__tag{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;
+  padding:clamp(8px,1vw,16px) clamp(16px,1.8vw,28px);border-radius:var(--radius-circle);
+  font-weight:700;font-size:clamp(12px,1.15vw,19px);letter-spacing:-0.01em;
+  color:rgba(255,255,255,.75);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);}
+.rc-cloud__tag--solid{background:linear-gradient(135deg,#e7e9f2,#c7ccdd);color:var(--rc-navy);border-color:transparent;}
+.rc-cloud__tag--emphasis{background:linear-gradient(135deg,#e7e9f2,#c7ccdd);color:var(--rc-navy);border-color:transparent;font-size:clamp(13px,1.3vw,22px);}
+.rc-cloud__tag--lg{padding-inline:clamp(20px,2.4vw,36px);}
+.rc-cloud__tag--icon{padding:clamp(8px,1vw,16px);width:clamp(36px,3vw,48px);height:clamp(36px,3vw,48px);}
+.rc-cloud__tag:nth-child(odd){transform:rotate(-6deg);}
+.rc-cloud__tag:nth-child(even){transform:rotate(4deg);}
+.rc-cloud__tag--vert{writing-mode:vertical-rl;transform:rotate(8deg);padding-block:clamp(20px,2.4vw,32px);}
 
 /* ---------- tech stack ---------- */
 .rc-tech{position:relative;background:var(--rc-navy);overflow:clip;}
