@@ -30,6 +30,21 @@
 
 body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 
+/* ---------- GNB — 고정 상단 내비게이션 ---------- */
+.rc-gnb{position:fixed;top:0;left:0;width:100%;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:clamp(16px,2vw,24px) clamp(20px,4vw,60px);
+  background:rgba(7,20,56,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.08);}
+.rc-gnb__logo{color:var(--rc-white);font-weight:var(--fw-strong);font-size:clamp(16px,1.4vw,20px);letter-spacing:-0.02em;}
+.rc-gnb__nav{display:flex;align-items:center;gap:clamp(20px,2.6vw,40px);}
+.rc-gnb__nav a{color:rgba(255,255,255,.85);font-weight:var(--rc-fw-light);font-size:clamp(14px,1.05vw,16px);
+  letter-spacing:-0.01em;transition:opacity .15s ease;}
+.rc-gnb__nav a:hover{opacity:.7;}
+@media (max-width:560px){
+  .rc-gnb__nav a:not(:last-child){display:none;}
+}
+
 /* translate는 transform과 별도 속성이라, 각 뱃지가 이미 갖고 있는 transform(가운데 정렬 등)과
    충돌하지 않고 함께 적용된다 */
 @keyframes rc-chip-float{

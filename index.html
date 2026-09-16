@@ -38,8 +38,18 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
 </head>
 <body>
 
+<!-- GNB — 고정 상단 내비게이션. 유일한 버튼(.rc-btn)은 여전히 푸터뿐 — 여기 "문의하기"는 순수 앵커 링크 -->
+<header class="rc-gnb" id="gnb">
+  <a class="rc-gnb__logo" href="#top">CareBridge</a>
+  <nav class="rc-gnb__nav" aria-label="주요 메뉴">
+    <a href="#care">서비스</a>
+    <a href="#solution">솔루션</a>
+    <a href="#contact">문의하기</a>
+  </nav>
+</header>
+
 <!-- Hero — coded decorative mark + floating labels (no raster image; built to match the reference graphic) -->
-<section class="rc-hero">
+<section class="rc-hero" id="top">
   <div class="rc-hero__decor" aria-hidden="true">
     <div class="rc-hero__lines"></div>
     <div class="rc-hero__glow rc-hero__glow--left"></div>
@@ -90,7 +100,7 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
 </section>
 
 <!-- Pill row -->
-<section class="rc-pills">
+<section class="rc-pills" id="care">
   <div class="container--rc rc-pills__stack" data-reveal>
     <div class="rc-pills__row">
       <span class="rc-pill rc-pill--light">비대면 진료</span>
@@ -135,7 +145,7 @@ Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, �
 </section>
 
 <!-- Tech stack -->
-<section class="rc-tech">
+<section class="rc-tech" id="solution">
   <div class="rc-tech__cards-pin">
     <div class="rc-tech__cards-sticky">
       <div class="rc-tech__head">
