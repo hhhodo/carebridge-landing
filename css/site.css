@@ -168,18 +168,19 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 .rc-tech__head h2 .accent{color:var(--rc-blue-light);}
 .rc-tech__row{position:relative;z-index:1;display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(12px,1.6vw,32px);
   padding:0 clamp(20px,8vw,160px) clamp(60px,10vw,140px);}
-.rc-tech__card{flex-shrink:0;width:clamp(140px,17vw,260px);display:flex;flex-direction:column;align-items:center;gap:16px;
-  padding:clamp(20px,2vw,32px) clamp(16px,1.6vw,24px);border-radius:20px;
-  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
-  opacity:0;transform:translateY(56px);transition:opacity .6s ease,transform .6s ease;}
+/* 카드 디자인(크기/모서리/트랜지션)은 기존 그대로 — 이미지와 캡션만 교체 */
+.rc-tech__card{flex-shrink:0;width:clamp(140px,19.5vw,375px);height:clamp(184px,25.6vw,492px);border-radius:12px;
+  background:var(--rc-white);
+  opacity:0;transform:translateY(56px);transition:opacity .6s ease,transform .6s ease;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px;}
 .rc-tech__card.is-visible{opacity:1;transform:translateY(0);}
 .rc-tech__card:nth-child(1){transition-delay:0s;}
 .rc-tech__card:nth-child(2){transition-delay:.12s;}
 .rc-tech__card:nth-child(3){transition-delay:.24s;}
 .rc-tech__card:nth-child(4){transition-delay:.36s;}
 .rc-tech__card:nth-child(5){transition-delay:.48s;}
-.rc-tech__card img{width:100%;height:clamp(120px,12vw,180px);object-fit:contain;}
-.rc-tech__card p{color:var(--rc-white);font-weight:var(--rc-fw-light);font-size:clamp(14px,1.1vw,18px);text-align:center;}
+.rc-tech__card img{width:100%;flex:1;min-height:0;object-fit:contain;}
+.rc-tech__card p{color:var(--rc-navy);font-weight:var(--rc-fw-light);font-size:clamp(14px,1.1vw,18px);text-align:center;}
 
 /* ---------- portfolio row (static — no carousel/arrows) ---------- */
 .rc-portfolio{background:var(--rc-navy);padding-block:clamp(60px,10vw,120px);overflow:clip;}
