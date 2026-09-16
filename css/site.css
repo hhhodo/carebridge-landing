@@ -55,10 +55,12 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 .rc-hero__decor{position:absolute;inset:0;z-index:0;overflow:clip;}
 .rc-hero__lines{position:absolute;inset:-10% -10%;
   background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 220px);}
-/* 부드러운 대형 원형 그라디언트 2개가 좌우로 퍼져있는 배경 (로고 그래픽 제거) */
-.rc-hero__glow{position:absolute;top:-10%;width:min(58vw,760px);aspect-ratio:1/1;border-radius:50%;filter:blur(2px);}
-.rc-hero__glow--left{left:-14%;background:radial-gradient(circle,rgba(47,168,255,.35) 0%,rgba(47,168,255,0) 70%);}
-.rc-hero__glow--right{right:-14%;top:6%;background:radial-gradient(circle,rgba(201,59,214,.32) 0%,rgba(201,59,214,0) 70%);}
+/* 부드러운 대형 원형 그라디언트 2개 — 왼쪽 위 / 오른쪽 아래 모서리에 걸쳐 1/3만 노출 */
+.rc-hero__glow{position:absolute;width:min(174vw,2280px);aspect-ratio:1/1;border-radius:50%;filter:blur(2px);}
+.rc-hero__glow--left{left:0;top:0;transform:translate(-66%,-66%);
+  background:radial-gradient(circle,rgba(47,168,255,.35) 0%,rgba(47,168,255,0) 70%);}
+.rc-hero__glow--right{right:0;bottom:0;transform:translate(66%,66%);
+  background:radial-gradient(circle,rgba(201,59,214,.32) 0%,rgba(201,59,214,0) 70%);}
 .rc-chip{position:absolute;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;
   padding:clamp(10px,1.1vw,16px) clamp(16px,1.8vw,26px);border-radius:var(--radius-circle);
   font-weight:var(--rc-fw-light);font-size:clamp(13px,1.15vw,20px);color:#fff;
