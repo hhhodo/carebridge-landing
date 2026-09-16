@@ -164,7 +164,7 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 .rc-tech__head{position:relative;z-index:1;text-align:center;padding-block:clamp(60px,10vw,140px) clamp(40px,6vw,80px);}
 /* 배경이 밝은 파스텔 그라디언트라 네이비 텍스트로 대비 확보 */
 .rc-tech__head h2{color:var(--rc-navy);font-weight:var(--fw-strong);
-  font-size:clamp(20px,3.4vw,var(--rc-fs-title));line-height:1.4;letter-spacing:-0.02em;margin-inline:auto;
+  font-size:clamp(16px,2.9vw,var(--rc-fs-title));line-height:1.4;letter-spacing:-0.02em;margin-inline:auto;
   white-space:nowrap;}
 .rc-tech__head h2 .accent{color:var(--rc-blue);}
 .rc-tech__row{position:relative;z-index:1;display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(20px,2.4vw,40px);
