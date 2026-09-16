@@ -1,0 +1,232 @@
+<!--
+variant:
+typo=loud
+image=high
+color=accent
+
+image-radius=soft
+card-radius=soft
+button-radius=round
+
+border=hairline
+button-style=solid
+fw=700/500
+spacing=space-section
+-->
+<!--
+layout:
+Hero        → full-bleed video bg → bottom-left copy + bottom-right side note (measured 1920x1080, content offset 120/1920)
+Statement   → full-bleed navy → left-aligned copy block (measured content offset 120/1920, container 1680)
+Mid stmt    → full-bleed navy → centered headline
+Pills       → full-bleed navy → centered pill row (measured 88px pill text)
+Showcase    → full-bleed navy → single screenshot image
+Tech        → full-bleed navy+bg image → centered heading + horizontal logo row (375x492 measured tiles)
+Portfolio   → full-bleed navy → static horizontal row (NOT a carousel, no arrow nav per house rule), 636px items measured
+Features    → white → 3 stacked full-width cards (measured 1696-1816 container), navy/green/navy
+Footer      → navy → CTA + 4 nav columns (측정 문의하기 컬럼만 버튼으로 유지, 회사소개서/인스타그램 버튼 제거)
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>리커너스 — 오늘의 완성을 넘어 내일의 운영으로</title>
+<meta name="description" content="웹·앱 크로스플랫폼 개발 기업 리커너스. 오픈 이후의 수정과 운영까지 고려한 자체 솔루션 기반 서비스를 설계합니다.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<nav class="rc-nav" id="nav">
+  <span class="rc-nav__mark">RECONERS</span>
+  <a class="rc-btn" href="#contact">문의하기</a>
+</nav>
+
+<!-- Hero — full-bleed video, bottom-left/right overlay content -->
+<section class="rc-hero">
+  <div class="rc-hero__media">
+    <img src="assets/images/hero-video.png" alt="리커너스가 만든 서비스 화면 목업" loading="eager">
+  </div>
+  <div class="container--rc rc-hero__content">
+    <div class="rc-hero__copy" data-reveal>
+      <p class="rc-hero__sub">오늘의 완성을 넘어 내일의 운영으로<span class="accent">.</span></p>
+      <h1 class="rc-hero__h1">지속가능한 서비스를 설계합니다</h1>
+    </div>
+    <div class="rc-hero__side" data-reveal>
+      <img src="assets/images/vec-rect-541.svg" alt="" aria-hidden="true">
+      <p>리커너스는 일회성 제작에 그치지 않고, 장기적인 운영과 확장까지 고려한 비즈니스 아키텍처를 구축합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Statement — full-bleed navy, left-aligned copy (측정 offset 120/1920) -->
+<section class="rc-statement">
+  <div class="container--rc rc-statement__inner">
+    <h2 data-reveal>서비스는 오픈할 때보다,<br>수정과 운영이 시작될 때<br>실력이 드러납니다</h2>
+    <div class="rc-statement__body">
+      <p data-reveal>많은 결과물은 오픈 직후에는 비슷해 보입니다.</p>
+      <p data-reveal>하지만 시간이 지나 수정 요청이 생기고, 기능이 추가되고, 담당자가 바뀌고,<br>서비스가 확장되기 시작하면 처음 만든 구조의 차이가 드러납니다.</p>
+      <p data-reveal>리커너스는 서비스가 &lsquo;오픈&rsquo;에서 끝나는 일이 아니라, 기업이 계속 활용하고<br>운영해야 하는 <span class="accent">비즈니스 자산</span>으로 바라봅니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Mid statement — centered big headline -->
+<section class="rc-mid">
+  <div class="container--rc">
+    <h2 data-reveal>그래서 리커너스는<br>자체 솔루션 위에 단단한 서비스를 설계합니다<span class="accent">.</span></h2>
+  </div>
+</section>
+
+<!-- Pill row -->
+<section class="rc-pills">
+  <div class="container--rc rc-pills__row" data-reveal>
+    <span class="rc-pill rc-pill--light">반응형</span>
+    <span class="rc-pill rc-pill--light">홈페이지</span>
+    <span class="rc-pill rc-pill--light">부터,</span>
+    <span class="rc-pill rc-pill--outline">모바일</span>
+    <span class="rc-pill rc-pill--outline">앱제작까지</span>
+  </div>
+</section>
+
+<!-- Showcase — single screenshot -->
+<section class="rc-showcase">
+  <div class="container--rc-lg">
+    <img src="assets/images/dashboard-screenshot.png" alt="리커너스가 구축한 서비스 대시보드 화면" loading="lazy">
+  </div>
+</section>
+
+<!-- Tech stack -->
+<section class="rc-tech">
+  <div class="rc-tech__bg"><img src="assets/images/tech-section-bg.png" alt="" aria-hidden="true"></div>
+  <div class="rc-tech__head" data-reveal>
+    <h2>다양한 기능을 활용한 자체 솔루션으로<br>안정적인 동작과 효율적인 관리를 지원합니다</h2>
+  </div>
+  <div class="rc-tech__row" data-reveal>
+    <img src="assets/images/logo-notion.png" alt="Notion" loading="lazy">
+    <img src="assets/images/logo-claude.png" alt="Claude AI" loading="lazy">
+    <img src="assets/images/logo-figma.png" alt="Figma" loading="lazy">
+    <img src="assets/images/logo-react-next.png" alt="React + Next.js" loading="lazy">
+    <img src="assets/images/logo-aws.png" alt="AWS" loading="lazy">
+    <img src="assets/images/logo-nodejs.png" alt="Node.js" loading="lazy">
+  </div>
+</section>
+
+<!-- Portfolio — static row, no carousel/arrows -->
+<section class="rc-portfolio">
+  <div class="rc-portfolio__row" id="portfolioRow">
+    <article class="rc-portfolio__item" data-reveal>
+      <div class="rc-portfolio__media"></div>
+      <h3>뷰노</h3>
+      <p>의료 AI 솔루션 반응형 홈페이지</p>
+    </article>
+    <article class="rc-portfolio__item" data-reveal>
+      <div class="rc-portfolio__media"></div>
+      <h3>모두의 통근</h3>
+      <p>통근버스 예약 모바일 어플리케이션 플랫폼</p>
+    </article>
+    <article class="rc-portfolio__item" data-reveal>
+      <div class="rc-portfolio__media"></div>
+      <h3>삼미스피커</h3>
+      <p>국내 스피커 산업의 선두주자</p>
+    </article>
+    <article class="rc-portfolio__item" data-reveal>
+      <div class="rc-portfolio__media"></div>
+      <h3>쇼:크립트</h3>
+      <p>뮤지컬 컨텐츠 거래 웹솔루션</p>
+    </article>
+    <article class="rc-portfolio__item" data-reveal>
+      <div class="rc-portfolio__media"></div>
+      <h3>서울포레스트</h3>
+      <p>정신건강의학과의원 반응형 홈페이지</p>
+    </article>
+    <article class="rc-portfolio__item" data-reveal>
+      <div class="rc-portfolio__media"></div>
+      <h3>청소용병</h3>
+      <p>청소 중개 모바일 어플리케이션 플랫폼</p>
+    </article>
+    <article class="rc-portfolio__item" data-reveal>
+      <div class="rc-portfolio__media"></div>
+      <h3>디플리</h3>
+      <p>사운드 AI 기업 반응형 홈페이지</p>
+    </article>
+  </div>
+</section>
+
+<!-- Feature cards -->
+<section class="rc-features">
+  <div class="container--rc-lg rc-features__stack">
+    <article class="rc-feature-card rc-feature-card--navy" data-reveal>
+      <div class="rc-feature-card__copy">
+        <h3>체계적인 프로젝트 관리와 수평적 협업</h3>
+        <p>리커너스의 프로젝트는 Notion을 통해 체계적으로 관리합니다. 업무 내용과 의사결정, 수정 요청을 기록하여 프로젝트의 흐름을 명확하게 유지합니다. 프로젝트에 소요되는 시간은 분 단위로 관리되며, 정확한 업무 파악을 바탕으로 효율적인 퍼포먼스를 만들어내며 수평적인 소통 문화는 다양한 아이디어를 이끌어내고, 결과물의 완성도를 높이는 기반이 됩니다.</p>
+      </div>
+      <div class="rc-feature-card__media"><img src="assets/images/feature-notion.png" alt="Notion 기반 프로젝트 관리 화면" loading="lazy"></div>
+    </article>
+    <article class="rc-feature-card rc-feature-card--green" data-reveal>
+      <div class="rc-feature-card__copy">
+        <h3>비즈니스 가치를 담아내는 올인원 개발</h3>
+        <p>홈페이지는 기업의 아이덴티티를 표현해야 하고, 서비스는 방향성과 가치를 함께 담아야 합니다. 브랜드부터 서비스까지의 이해 없이 진행되는 개발은 단편적인 결과물을 만들 수는 있지만, 사업의 핵심 가치를 제대로 전달하기 어렵습니다. 리커너스는 마케팅과 브랜딩, 콘텐츠, 운영까지 함께 이해하고 고려하며, 브랜드의 본질을 담은 서비스를 구현합니다.</p>
+      </div>
+      <div class="rc-feature-card__media"><img src="assets/images/feature-branding.png" alt="브랜딩을 담은 서비스 화면" loading="lazy"></div>
+    </article>
+    <article class="rc-feature-card rc-feature-card--navy" data-reveal>
+      <div class="rc-feature-card__copy">
+        <h3>안정적이고 강력한 클라우드 인프라 구축</h3>
+        <p>좋은 서비스는 화면만으로 완성되지 않습니다. 속도와 보안, 배포, 확장성, 운영 안정성까지 함께 고려되어야 합니다. 리커너스는 AWS와 ECS 기반의 클라우드 환경을 구축하여 안정적인 성능과 운영 환경을 제공합니다. 기술과 운영을 함께 고려한 설계를 바탕으로, 안정적인 서비스 경험과 지속 가능한 운영을 지원합니다.</p>
+      </div>
+      <div class="rc-feature-card__media"><img src="assets/images/feature-cloud.png" alt="클라우드 인프라 다이어그램" loading="lazy"></div>
+    </article>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="rc-footer" id="contact">
+  <div class="rc-footer__top">
+    <div class="rc-footer__lead">
+      <p class="rc-footer__tag">상상을 기술로 완성하는 파트너, 리커너스</p>
+      <p class="rc-footer__cta">당신의 상상을<br><strong>현실로 만들어보세요</strong></p>
+    </div>
+    <div class="rc-footer__nav">
+      <div class="rc-footer__col">
+        <span class="rc-footer__col-head">프로젝트</span>
+        <ul>
+          <li>전체</li>
+          <li>모바일앱</li>
+          <li>반응형 웹사이트</li>
+          <li>브랜딩</li>
+        </ul>
+      </div>
+      <div class="rc-footer__col">
+        <span class="rc-footer__col-head">회사소개</span>
+      </div>
+      <div class="rc-footer__col">
+        <span class="rc-footer__col-head">구성원</span>
+      </div>
+      <div class="rc-footer__col">
+        <span class="rc-footer__col-head">문의하기</span>
+        <a class="rc-btn" href="mailto:hello@reconers.com">문의 남기기</a>
+      </div>
+    </div>
+  </div>
+  <div class="rc-footer__bottom">
+    <dl class="rc-footer__info">
+      <div><dt>주소</dt><dd>서울 강남구 삼성로 549 4층 리커너스</dd></div>
+      <div><dt>전화번호</dt><dd>+82 2 566 5810</dd></div>
+      <div><dt>메일</dt><dd>hello@reconers.com</dd></div>
+    </dl>
+    <div class="rc-footer__legal">
+      <div class="rc-footer__legal-links">
+        <span>개인정보처리방침</span>
+        <span>이용약관</span>
+        <span>쿠키정책</span>
+      </div>
+      <p class="rc-footer__copyright">ⓒ 2026 RECONERS, All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
