@@ -15,15 +15,15 @@ spacing=space-section
 -->
 <!--
 layout:
-Hero        → full-bleed video bg → bottom-left copy + bottom-right side note (measured 1920x1080, content offset 120/1920)
-Statement   → full-bleed navy → left-aligned copy block (measured content offset 120/1920, container 1680)
-Mid stmt    → full-bleed navy → centered headline
-Pills       → full-bleed navy → centered pill row (measured 88px pill text)
-Showcase    → full-bleed navy → single screenshot image
-Tech        → full-bleed navy+bg image → centered heading + horizontal logo row (375x492 measured tiles)
-Portfolio   → full-bleed navy → static horizontal row (NOT a carousel, no arrow nav per house rule), 636px items measured
-Features    → white → 3 stacked full-width cards (measured 1696-1816 container), navy/green/navy
-Footer      → navy → CTA + 4 nav columns (측정 문의하기 컬럼만 버튼으로 유지, 회사소개서/인스타그램 버튼 제거)
+Hero        → navy, CODED decorative R-mark + floating labels (no raster bg) → bottom-left copy + bottom-right side note (측정 1920x1080, offset 120/1920)
+Statement   → white bg (측정: 배경 navy 아님, 장식 도형만 navy) → 좌측 정렬 카피, CSS 블롭 장식 (컨테이너 1680)
+Mid stmt    → navy → centered headline
+Pills       → navy → 좌측 정렬 2행 (3 solid + 2 outline, 측정 88px)
+Showcase    → navy → single screenshot image (실제 스크린샷이라 이미지 유지)
+Tech        → navy + CSS 그라디언트 메시 배경 → 헤딩(Nore Framework 포함) + 실제 로고 이미지 행 (375x492 측정)
+Portfolio   → navy → 헤딩/서브카피 + static horizontal row (NOT a carousel), 정사각/원형 교차 634px 측정
+Features    → white → 3 stacked cards (측정 1696-1816), navy/green/navy, 그래픽은 CSS 원/필/SVG로 코드 구현 (래스터 아님)
+Footer      → navy → CTA + 4 nav columns (유일한 버튼: 문의하기, 회사소개서/인스타그램 버튼 제거)
 -->
 <!DOCTYPE html>
 <html lang="ko">
@@ -38,10 +38,24 @@ Footer      → navy → CTA + 4 nav columns (측정 문의하기 컬럼만 버�
 </head>
 <body>
 
-<!-- Hero — full-bleed navy, real exported decorative mark + floating labels, bottom-left/right overlay content -->
+<!-- Hero — coded decorative mark + floating labels (no raster image; built to match the reference graphic) -->
 <section class="rc-hero">
-  <div class="rc-hero__media" aria-hidden="true">
-    <img src="assets/images/hero-video.png" alt="">
+  <div class="rc-hero__decor" aria-hidden="true">
+    <div class="rc-hero__lines"></div>
+    <div class="rc-hero__glow"></div>
+    <svg class="rc-hero__mark" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M28 26H108V78H70L118 134" stroke="url(#rc-r-grad)" stroke-width="22" stroke-linecap="square"/>
+      <circle cx="128" cy="30" r="10" fill="#c9cf6a"/>
+      <defs>
+        <linearGradient id="rc-r-grad" x1="28" y1="26" x2="118" y2="134" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#dfe1ef"/><stop offset="1" stop-color="#5c6488"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <span class="rc-chip rc-chip--fade" style="left:5%;top:36%">Remarkable</span>
+    <span class="rc-chip rc-chip--teal" style="left:20%;top:47%">Doers</span>
+    <span class="rc-chip rc-chip--lav" style="right:4%;top:47%">Consideration</span>
+    <span class="rc-chip rc-chip--dark" style="left:50%;top:69%;transform:translateX(-50%)">+ Create</span>
   </div>
   <div class="container--rc rc-hero__content">
     <div class="rc-hero__copy" data-reveal>
@@ -57,7 +71,10 @@ Footer      → navy → CTA + 4 nav columns (측정 문의하기 컬럼만 버�
 <!-- Statement — white bg + soft decorative gradient blob (측정 offset 120/1920) -->
 <section class="rc-statement">
   <div class="rc-statement__decor" aria-hidden="true">
-    <img src="assets/images/statement-bg.png" alt="" class="rc-statement__blob">
+    <span class="rc-blob rc-blob--pill-a"></span>
+    <span class="rc-blob rc-blob--pill-b"></span>
+    <span class="rc-blob rc-blob--plus">+</span>
+    <span class="rc-blob rc-blob--glow"></span>
   </div>
   <div class="container--rc rc-statement__inner">
     <h2 data-reveal>서비스는 오픈할 때보다,<br>수정과 운영이 시작될 때<br>실력이 드러납니다</h2>
@@ -100,7 +117,7 @@ Footer      → navy → CTA + 4 nav columns (측정 문의하기 컬럼만 버�
 
 <!-- Tech stack -->
 <section class="rc-tech">
-  <div class="rc-tech__bg"><img src="assets/images/tech-section-bg.png" alt="" aria-hidden="true"></div>
+  <div class="rc-tech__bg" aria-hidden="true"></div>
   <div class="rc-tech__head" data-reveal>
     <h2>다양한 기능을 활용한 자체 솔루션<br><span class="accent">Nore Framework</span>로<br>안정적인 동작과 효율적인 관리를 지원합니다</h2>
   </div>
@@ -167,21 +184,49 @@ Footer      → navy → CTA + 4 nav columns (측정 문의하기 컬럼만 버�
         <h3>체계적인 프로젝트 관리와 수평적 협업</h3>
         <p>리커너스의 프로젝트는 Notion을 통해 체계적으로 관리합니다. 업무 내용과 의사결정, 수정 요청을 기록하여 프로젝트의 흐름을 명확하게 유지합니다. 프로젝트에 소요되는 시간은 분 단위로 관리되며, 정확한 업무 파악을 바탕으로 효율적인 퍼포먼스를 만들어내며 수평적인 소통 문화는 다양한 아이디어를 이끌어내고, 결과물의 완성도를 높이는 기반이 됩니다.</p>
       </div>
-      <div class="rc-feature-card__media"><img src="assets/images/feature-notion.png" alt="Notion 기반 프로젝트 관리 화면" loading="lazy"></div>
+      <div class="rc-feature-card__media rc-graphic rc-graphic--notion" aria-hidden="true">
+        <span class="rc-graphic__shadow"></span>
+        <span class="rc-graphic__circle rc-graphic__circle--top">정확성</span>
+        <span class="rc-graphic__pill rc-graphic__pill--right">의사 결정</span>
+        <span class="rc-graphic__card">프로젝트</span>
+        <span class="rc-graphic__pill rc-graphic__pill--left">수평적 소통</span>
+      </div>
     </article>
     <article class="rc-feature-card rc-feature-card--green" data-reveal>
       <div class="rc-feature-card__copy">
         <h3>비즈니스 가치를 담아내는 올인원 개발</h3>
         <p>홈페이지는 기업의 아이덴티티를 표현해야 하고, 서비스는 방향성과 가치를 함께 담아야 합니다. 브랜드부터 서비스까지의 이해 없이 진행되는 개발은 단편적인 결과물을 만들 수는 있지만, 사업의 핵심 가치를 제대로 전달하기 어렵습니다. 리커너스는 마케팅과 브랜딩, 콘텐츠, 운영까지 함께 이해하고 고려하며, 브랜드의 본질을 담은 서비스를 구현합니다.</p>
       </div>
-      <div class="rc-feature-card__media"><img src="assets/images/feature-branding.png" alt="브랜딩을 담은 서비스 화면" loading="lazy"></div>
+      <div class="rc-feature-card__media rc-graphic rc-graphic--branding" aria-hidden="true">
+        <span class="rc-graphic__shadow"></span>
+        <span class="rc-graphic__ring"></span>
+        <span class="rc-graphic__center">브랜드 본질을 담은<br>결과물</span>
+        <span class="rc-graphic__satellite rc-graphic__satellite--tl">브랜드<br>아이덴티티</span>
+        <span class="rc-graphic__satellite rc-graphic__satellite--tr">서비스<br>방향성</span>
+        <span class="rc-graphic__satellite rc-graphic__satellite--bl">핵심 가치</span>
+        <span class="rc-graphic__satellite rc-graphic__satellite--br">운영 방향</span>
+      </div>
     </article>
     <article class="rc-feature-card rc-feature-card--navy" data-reveal>
       <div class="rc-feature-card__copy">
         <h3>안정적이고 강력한 클라우드 인프라 구축</h3>
         <p>좋은 서비스는 화면만으로 완성되지 않습니다. 속도와 보안, 배포, 확장성, 운영 안정성까지 함께 고려되어야 합니다. 리커너스는 AWS와 ECS 기반의 클라우드 환경을 구축하여 안정적인 성능과 운영 환경을 제공합니다. 기술과 운영을 함께 고려한 설계를 바탕으로, 안정적인 서비스 경험과 지속 가능한 운영을 지원합니다.</p>
       </div>
-      <div class="rc-feature-card__media"><img src="assets/images/feature-cloud.png" alt="클라우드 인프라 다이어그램" loading="lazy"></div>
+      <div class="rc-feature-card__media rc-graphic rc-graphic--cloud" aria-hidden="true">
+        <span class="rc-graphic__shadow"></span>
+        <span class="rc-cloud-lobe rc-cloud-lobe--l"></span>
+        <span class="rc-cloud-lobe rc-cloud-lobe--r"></span>
+        <span class="rc-cloud-lobe rc-cloud-lobe--top"></span>
+        <svg class="rc-shield" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 6 L188 40 V116C188 164 148 198 100 214C52 198 12 164 12 116V40Z" fill="url(#rc-shield-grad)"/>
+          <path d="M70 112 L92 136 L136 90" stroke="#3b5bdb" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="rc-shield-grad" x1="12" y1="6" x2="188" y2="214" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#eef2ff"/><stop offset=".55" stop-color="#c8d6ff"/><stop offset="1" stop-color="#7b93ff"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
     </article>
   </div>
 </section>
