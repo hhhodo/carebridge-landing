@@ -95,18 +95,14 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 .rc-hero__side p{font-weight:var(--rc-fw-light);font-size:clamp(16px,1.45vw,var(--rc-fs-body));line-height:1.5;letter-spacing:-0.02em;}
 
 /* ---------- statement (흰 배경 + 은은한 그라디언트 장식) ---------- */
-.rc-statement{position:relative;background:var(--rc-white);overflow:clip;padding-block:clamp(80px,14vw,240px) clamp(120px,18vw,240px);
+/* padding-top을 두지 않는다 — 섹션에 도달하자마자 타이틀이 화면에 바로 딱 맞게 고정되도록
+   (padding이 있으면 sticky가 걸리기 전까지 빈 공간만큼 더 스크롤해야 해서 "중앙까지 더 스크롤해야
+   하는" 지연이 생겼다) */
+.rc-statement{position:relative;background:var(--rc-white);overflow:clip;padding-block:0 clamp(120px,18vw,240px);
   background-image:linear-gradient(rgba(7,20,56,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(7,20,56,.05) 1px,transparent 1px);
   background-size:120px 120px;}
 .rc-statement__decor{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:clip;}
 .rc-blob{position:absolute;display:block;border-radius:var(--radius-circle);}
-.rc-blob--pill-a{right:6%;top:12%;width:min(20vw,260px);height:min(6vw,72px);
-  background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.5) 100%);filter:blur(2px);}
-.rc-blob--pill-b{right:2%;top:16.5%;width:min(17vw,220px);height:min(4.2vw,52px);
-  background:linear-gradient(90deg,#2fa8ff 0%,#5b4de0 55%,#c93bd6 100%);}
-.rc-blob--plus{right:24%;top:28%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;
-  background:rgba(255,255,255,.8);box-shadow:0 8px 24px rgba(56,71,115,.15);color:var(--rc-navy-muted);
-  font-size:22px;font-weight:var(--rc-fw-light);border-radius:50%;}
 .rc-blob--glow{right:-6%;bottom:-16%;width:min(34vw,420px);aspect-ratio:1/1;
   background:radial-gradient(circle,rgba(120,140,220,.22) 0%,rgba(120,140,220,0) 70%);}
 /* 타이틀이 화면 전체(흰 격자 배경 포함)를 채우도록 고정 — 200vh 스크롤 구간 동안 스크롤에 맞춰 글자가 채워짐 */
