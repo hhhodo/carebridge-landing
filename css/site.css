@@ -60,16 +60,17 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
   -webkit-mask-image:radial-gradient(ellipse 55% 60% at 50% 6%,#000 0%,transparent 78%);}
 /* 부드러운 대형 원형 그라디언트 2개 — 왼쪽 위 / 오른쪽 아래 모서리에 걸쳐 1/3만 노출.
    단계가 많은 다중 stop 그라디언트로 경계를 매끄럽게 처리 (하드엣지 방지) */
-.rc-hero__glow{position:absolute;width:min(348vw,4560px);aspect-ratio:1/1;border-radius:50%;}
+.rc-hero__glow{position:absolute;width:min(348vw,4560px);aspect-ratio:1/1;}
 .rc-hero__glow--left{left:0;top:0;transform:translate(-66%,-66%);
   background:radial-gradient(circle,rgba(47,168,255,.32) 0%,rgba(47,168,255,.22) 28%,rgba(47,168,255,.1) 50%,rgba(47,168,255,.03) 68%,rgba(47,168,255,0) 82%);}
 .rc-hero__glow--right{right:0;bottom:0;transform:translate(66%,66%);
   background:radial-gradient(circle,rgba(201,59,214,.3) 0%,rgba(201,59,214,.2) 28%,rgba(201,59,214,.09) 50%,rgba(201,59,214,.03) 68%,rgba(201,59,214,0) 82%);}
 .rc-chip{position:absolute;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;
-  padding:clamp(10px,1.1vw,16px) clamp(16px,1.8vw,26px);border-radius:var(--radius-circle);
-  font-weight:var(--rc-fw-light);font-size:clamp(13px,1.15vw,20px);color:#fff;
+  padding:clamp(20px,2.2vw,32px) clamp(32px,3.6vw,52px);border-radius:var(--radius-circle);
+  font-weight:var(--rc-fw-light);font-size:clamp(26px,2.3vw,40px);color:#fff;
   background:var(--rc-chip-gradient);
-  animation:rc-chip-float 4.5s ease-in-out infinite;}
+  animation:rc-chip-float 4.5s ease-in-out infinite;
+  transition:margin .18s ease-out;}
 .rc-chip:nth-of-type(2n){animation-delay:-1.2s;}
 .rc-chip:nth-of-type(3n){animation-delay:-2.4s;}
 .rc-chip:nth-of-type(4n){animation-delay:-3.3s;}
@@ -257,4 +258,13 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 @media (max-width:768px){
   .rc-footer__bottom{flex-direction:column;}
   .rc-footer__legal{align-items:flex-start;}
+}
+
+/* ---------- 커스텀 커서: 노란 원, 뱃지에 닿으면 뱃지가 밀려남 (js/cursor.js) ---------- */
+#rc-cursor-dot{position:fixed;top:0;left:0;width:22px;height:22px;margin:-11px 0 0 -11px;
+  border-radius:50%;background:var(--rc-yellow);pointer-events:none;z-index:9999;display:none;}
+@media (pointer:fine){
+  body{cursor:none;}
+  a,button,[role="button"]{cursor:none;}
+  #rc-cursor-dot{display:block;}
 }
