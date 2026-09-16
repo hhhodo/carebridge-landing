@@ -291,13 +291,13 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 /* ---------- footer ---------- */
 .rc-footer{background:var(--rc-navy);color:var(--rc-white);padding-inline:clamp(20px,3.1vw,60px);padding-bottom:clamp(40px,4vw,80px);}
 .rc-footer__top{border-bottom:1px solid var(--rc-hairline);padding-block:clamp(60px,6.25vw,120px) clamp(40px,4vw,80px);
-  display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(32px,4vw,48px);justify-content:space-between;}
+  display:flex;flex-wrap:wrap;align-items:center;gap:clamp(32px,4vw,48px);justify-content:space-between;}
 .rc-footer__lead{display:flex;flex-direction:column;gap:24px;max-width:809px;}
 .rc-footer__tag{font-weight:var(--rc-fw-light);font-size:clamp(18px,1.5vw,var(--rc-fs-body));}
 .rc-footer__cta{font-weight:var(--fw-base);font-size:clamp(32px,4.2vw,var(--rc-fs-title));line-height:1.2;letter-spacing:-0.02em;}
 .rc-footer__cta strong{font-weight:var(--fw-strong);}
 /* 문의하기 버튼만 굵게 (사이트 전체 "타이틀 제외 얇게" 규칙의 명시적 예외) */
-.rc-footer__top > .rc-btn{font-weight:var(--fw-strong);}
+.rc-footer__top > .rc-btn{font-weight:var(--fw-strong);font-size:20px;}
 /* 나머지 하단 텍스트는 화면비 상관없이 고정 20px */
 .rc-footer__bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;padding-top:clamp(40px,4vw,80px);}
 .rc-footer__info{display:flex;flex-wrap:wrap;gap:clamp(12px,1.5vw,24px);font-weight:var(--rc-fw-light);font-size:20px;}
