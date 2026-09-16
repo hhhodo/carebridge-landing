@@ -159,13 +159,15 @@ body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 /* ---------- tech stack ---------- */
 .rc-tech{position:relative;background:var(--rc-navy);overflow:clip;}
 /* 실제 Figma 원본의 파스텔 그라디언트 이미지로 복원 (CSS 근사 그라디언트보다 원본이 예쁘다는 피드백) */
+/* 파스텔 그라디언트가 또렷하게 보이도록 — 네이비 오버레이를 거의 걷어냄 */
 .rc-tech__bg{position:absolute;inset:0;z-index:0;}
-.rc-tech__bg img{width:100%;height:100%;object-fit:cover;opacity:.55;}
-.rc-tech__bg::after{content:"";position:absolute;inset:0;background:var(--rc-navy);opacity:.35;}
+.rc-tech__bg img{width:100%;height:100%;object-fit:cover;opacity:1;}
+.rc-tech__bg::after{content:"";position:absolute;inset:0;background:var(--rc-navy);opacity:.12;}
 .rc-tech__head{position:relative;z-index:1;text-align:center;padding-block:clamp(60px,10vw,140px) clamp(40px,6vw,80px);}
-.rc-tech__head h2{color:var(--rc-white);font-weight:var(--fw-strong);
+/* 배경이 밝은 파스텔 그라디언트로 바뀌어 네이비 텍스트로 대비 확보 */
+.rc-tech__head h2{color:var(--rc-navy);font-weight:var(--fw-strong);
   font-size:clamp(26px,4.2vw,var(--rc-fs-title));line-height:1.4;letter-spacing:-0.02em;max-width:38ch;margin-inline:auto;}
-.rc-tech__head h2 .accent{color:var(--rc-blue-light);}
+.rc-tech__head h2 .accent{color:var(--rc-blue);}
 .rc-tech__row{position:relative;z-index:1;display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(12px,1.6vw,32px);
   padding:0 clamp(20px,8vw,160px) clamp(60px,10vw,140px);}
 /* Figma 원본 "Notion 카드" 디자인 그대로 코드로 구현: 흰 카드 + 우측에 겹쳐진 카드 스택 그림자 +
