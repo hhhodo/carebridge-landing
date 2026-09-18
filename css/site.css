@@ -28,7 +28,8 @@
   --rc-chip-gradient:linear-gradient(90deg,#2fa8ff 0%,#5b4de0 55%,#c93bd6 100%); /* statement 섹션 그라디언트와 동일 */
 }
 
-body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
+html{overflow-x:hidden;}
+body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;overflow-x:hidden;}
 
 /* ---------- GNB — 고정 상단 내비게이션 ----------
    배경색 없음 — mix-blend-mode:difference가 fixed 포지션에서 실제로 안 밑에 깔린 배경과
@@ -335,6 +336,11 @@ body.rc-cursor-active #rc-cursor-dot{opacity:1;}
 
 /* ---------- 모바일 대응 ---------- */
 @media (max-width:700px){
+  /* 테크 섹션 타이틀: white-space:nowrap가 좁은 화면에서 문장을 화면 밖으로 밀어내
+     가로 스크롤이 생기고 글자가 잘려 보였음. 폰트 크기는 그대로 두고(줄이지 않고),
+     모바일에서만 줄바꿈을 허용해서 잘리지 않게 함 */
+  .rc-tech__head h2{white-space:normal;max-width:92vw;padding-inline:0;}
+
   /* 히어로 플로팅 라벨: 데스크톱 사이즈 그대로면 좁은 화면에서 겹치거나 삐져나감 */
   .rc-chip{padding:10px 16px;font-size:14px;}
   .rc-chip--dark{padding:10px 16px;}
