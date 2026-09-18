@@ -28,8 +28,7 @@
   --rc-chip-gradient:linear-gradient(90deg,#2fa8ff 0%,#5b4de0 55%,#c93bd6 100%); /* statement 섹션 그라디언트와 동일 */
 }
 
-html{overflow-x:hidden;}
-body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;overflow-x:hidden;}
+body{background:var(--rc-white);word-break:keep-all;overflow-wrap:break-word;}
 
 /* ---------- GNB — 고정 상단 내비게이션 ----------
    배경색 없음 — mix-blend-mode:difference가 fixed 포지션에서 실제로 안 밑에 깔린 배경과
